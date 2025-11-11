@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  ═══════════════════════════════════════════════
+  🎨 GLOBAL STYLES - Web3 Token Landing Page
+  Theme: Light Steel Industrial Minimal Futuristic
+  ═══════════════════════════════════════════════
+*/
+
+@layer base {
+  :root {
+    --steel-50: #F8FAFC;
+    --steel-800: #111827;
+    --accent-blue: #3B82F6;
+  }
+
+  * {
+    @apply border-steel-200;
+  }
+
+  body {
+    @apply bg-steel-800 text-steel-50 antialiased;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* 🌟 Glassmorphism utility */
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/10;
+  }
+
+  /* ✨ Glow border utility */
+  .glow-border {
+    @apply border border-transparent bg-gradient-to-r from-steel-600 to-accent-blue bg-clip-border;
+  }
+
+  /* 🔮 Text gradient utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-steel-100 to-accent-blue bg-clip-text text-transparent;
+  }
+
+  /* 💫 Shimmer effect utility */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::before {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    content: '';
+    animation: shimmer 2s linear infinite;
+  }
+}

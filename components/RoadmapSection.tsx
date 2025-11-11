@@ -1,0 +1,220 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Rocket, Code, Users, Globe } from "lucide-react";
+import { slideUp, timelineDot, timelineLine } from "@/lib/animations";
+
+/* 
+  ═══════════════════════════════════════════════
+  🗺️ ROADMAP SECTION
+  Features:
+  - Horizontal timeline with sequential reveal
+  - Glowing dots at each milestone
+  - Line grows from left to right
+  - Icon-based milestone markers
+  - Staggered animation entrance
+  ═══════════════════════════════════════════════
+*/
+
+const milestones = [
+  {
+    icon: Rocket,
+    phase: "Q1 2025",
+    title: "Token Launch",
+    items: [
+      "Smart contract deployment",
+      "Security audit completion",
+      "Token sale begins",
+      "Initial DEX listing"
+    ],
+    status: "completed"
+  },
+  {
+    icon: Code,
+    phase: "Q2 2025",
+    title: "Platform Development",
+    items: [
+      "DApp beta release",
+      "Staking mechanism launch",
+      "Mobile app development",
+      "Partnership announcements"
+    ],
+    status: "in-progress"
+  },
+  {
+    icon: Users,
+    phase: "Q3 2025",
+    title: "Community Growth",
+    items: [
+      "Governance implementation",
+      "Community voting system",
+      "Ambassador program",
+      "Marketing expansion"
+    ],
+    status: "upcoming"
+  },
+  {
+    icon: Globe,
+    phase: "Q4 2025",
+    title: "Global Expansion",
+    items: [
+      "Major CEX listings",
+      "Cross-chain integration",
+      "Enterprise partnerships",
+      "Ecosystem grants program"
+    ],
+    status: "upcoming"
+  }
+];
+
+const statusColors = {
+  completed: "from-green-400 to-green-600",
+  "in-progress": "from-accent-blue to-blue-600",
+  upcoming: "from-steel-400 to-steel-600"
+};
+
+export default function RoadmapSection() {
+  return (
+    <section className="relative py-32 px-6 bg-gradient-to-b from-steel-900 to-steel-800 overflow-hidden">
+      {/* 🎨 Background decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-accent-blue rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-accent-blue rounded-full blur-[150px]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* 📢 Section header */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
+            <span className="text-gradient">Roadmap</span>
+          </h2>
+          <p className="text-xl text-steel-300 max-w-2xl mx-auto">
+            Our journey to revolutionize decentralized finance.
+            Transparent milestones with clear deliverables.
+          </p>
+        </motion.div>
+
+        {/* 🛤️ Timeline container */}
+        <div className="relative">
+          {/* 📏 Timeline line (horizontal) */}
+          <motion.div
+            className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-steel-700 origin-left"
+            variants={timelineLine}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div 
+              className="h-full bg-gradient-to-r from-accent-blue to-green-500"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+              style={{ transformOrigin: "left" }}
+            />
+          </motion.div>
+
+          {/* 🎯 Milestones grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+            {milestones.map((milestone, index) => (
+              <motion.div
+                key={index}
+                variants={slideUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.2 }}
+                className="relative"
+              >
+                {/* 💫 Glowing dot on timeline */}
+                <motion.div
+                  className="hidden md:flex absolute top-20 left-1/2 -translate-x-1/2 w-6 h-6 z-10"
+                  variants={timelineDot}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.5 }}
+                >
+                  <div className={`w-full h-full rounded-full bg-gradient-to-r ${statusColors[milestone.status as keyof typeof statusColors]} shadow-lg`}>
+                    <motion.div
+                      className="w-full h-full rounded-full"
+                      animate={milestone.status === "in-progress" ? {
+                        boxShadow: [
+                          "0 0 20px rgba(59, 130, 246, 0.8)",
+                          "0 0 40px rgba(59, 130, 246, 1)",
+                          "0 0 20px rgba(59, 130, 246, 0.8)"
+                        ]
+                      } : {}}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                  </div>
+                </motion.div>
+
+                {/* 🎴 Milestone card */}
+                <div className="glass p-6 rounded-2xl hover:bg-white/15 transition-all duration-300 border border-steel-600/30 mt-32 md:mt-28">
+                  {/* 🎯 Icon */}
+                  <div className="relative mb-6">
+                    <div className={`absolute inset-0 bg-gradient-to-r ${statusColors[milestone.status as keyof typeof statusColors]} blur-xl opacity-60 rounded-full`} />
+                    <div className={`relative w-16 h-16 bg-gradient-to-br ${statusColors[milestone.status as keyof typeof statusColors]} rounded-2xl flex items-center justify-center`}>
+                      <milestone.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                    </div>
+                  </div>
+
+                  {/* 📅 Phase badge */}
+                  <div className="inline-block bg-accent-blue/20 text-accent-blue px-3 py-1 rounded-full text-xs font-bold mb-3">
+                    {milestone.phase}
+                  </div>
+
+                  {/* 📝 Title */}
+                  <h3 className="text-xl font-heading font-bold text-steel-100 mb-4">
+                    {milestone.title}
+                  </h3>
+
+                  {/* ✅ Checklist items */}
+                  <ul className="space-y-2">
+                    {milestone.items.map((item, itemIndex) => (
+                      <motion.li
+                        key={itemIndex}
+                        className="flex items-start gap-2 text-steel-400 text-sm"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.2 + itemIndex * 0.1 + 0.3 }}
+                      >
+                        <span className={`inline-block w-1.5 h-1.5 rounded-full mt-1.5 bg-gradient-to-r ${statusColors[milestone.status as keyof typeof statusColors]}`} />
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  {/* 🏷️ Status badge */}
+                  <div className="mt-4 pt-4 border-t border-steel-700">
+                    <span className={`text-xs font-semibold uppercase tracking-wide ${
+                      milestone.status === "completed" ? "text-green-400" :
+                      milestone.status === "in-progress" ? "text-accent-blue" :
+                      "text-steel-400"
+                    }`}>
+                      {milestone.status === "completed" && "✓ Completed"}
+                      {milestone.status === "in-progress" && "⚡ In Progress"}
+                      {milestone.status === "upcoming" && "⏳ Upcoming"}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
