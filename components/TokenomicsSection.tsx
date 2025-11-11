@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight, progressBar } from "@/lib/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* 
   ═══════════════════════════════════════════════
@@ -14,14 +15,15 @@ import { slideFromLeft, slideFromRight, progressBar } from "@/lib/animations";
   ═══════════════════════════════════════════════
 */
 
-const tokenDistribution = [
-  { label: "Public Sale", percentage: 40, color: "from-accent-blue to-blue-600", align: "left" },
-  { label: "Team & Advisors", percentage: 20, color: "from-steel-400 to-steel-500", align: "right" },
-  { label: "Liquidity Pool", percentage: 25, color: "from-accent-blue/70 to-blue-500", align: "left" },
-  { label: "Reserve & Development", percentage: 15, color: "from-steel-500 to-steel-600", align: "right" },
+const distributionConfig = [
+  { key: "publicSale" as const, percentage: 40, color: "from-accent-blue to-blue-600", align: "left" },
+  { key: "team" as const, percentage: 20, color: "from-steel-400 to-steel-500", align: "right" },
+  { key: "liquidity" as const, percentage: 25, color: "from-accent-blue/70 to-blue-500", align: "left" },
+  { key: "development" as const, percentage: 15, color: "from-steel-500 to-steel-600", align: "right" },
 ];
 
 export default function TokenomicsSection() {
+  const { t } = useLanguage();
   return (
     <section className="relative py-32 px-6 bg-gradient-to-b from-steel-800 to-steel-900">
       {/* 🎨 Background decoration */}
@@ -39,17 +41,16 @@ export default function TokenomicsSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-            <span className="text-gradient">Tokenomics</span>
+            <span className="text-gradient">{t.tokenomics.title}</span>
           </h2>
           <p className="text-xl text-steel-300 max-w-2xl mx-auto">
-            Fair and transparent token distribution designed to ensure
-            long-term project sustainability and community growth.
+            {t.tokenomics.subtitle}
           </p>
         </motion.div>
 
         {/* 📊 Distribution bars */}
         <div className="space-y-12">
-          {tokenDistribution.map((item, index) => (
+          {distributionConfig.map((item, index) => (
             <motion.div
               key={index}
               initial="hidden"
@@ -61,7 +62,7 @@ export default function TokenomicsSection() {
               {/* 🏷️ Label and percentage */}
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-2xl font-heading font-bold text-steel-100 group-hover:text-accent-blue transition-colors">
-                  {item.label}
+                  {t.tokenomics.distribution[item.key]}
                 </h3>
                 <span className="text-3xl font-heading font-bold text-accent-blue">
                   {item.percentage}%
@@ -106,10 +107,7 @@ export default function TokenomicsSection() {
                 initial={{ height: 0 }}
                 whileHover={{ height: "auto" }}
               >
-                {item.label === "Public Sale" && "Available during token sale event for community participation"}
-                {item.label === "Team & Advisors" && "Locked for 12 months with 24-month vesting period"}
-                {item.label === "Liquidity Pool" && "Reserved for DEX liquidity and market stability"}
-                {item.label === "Reserve & Development" && "Used for project development and future partnerships"}
+                {t.tokenomics.tooltips[item.key]}
               </motion.div>
             </motion.div>
           ))}
@@ -124,9 +122,9 @@ export default function TokenomicsSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {[
-            { label: "Total Supply", value: "100,000,000", unit: "ETK" },
-            { label: "Initial Price", value: "0.01", unit: "ETH" },
-            { label: "Hard Cap", value: "1,000", unit: "ETH" }
+            { label: t.tokenomics.info.supply, value: "100,000,000", unit: "Token" },
+            { label: t.tokenomics.info.price, value: "Rp 1.000", unit: "IDR" },
+            { label: t.tokenomics.info.marketCap, value: "100 Miliar", unit: "IDR" }
           ].map((stat, index) => (
             <motion.div
               key={index}

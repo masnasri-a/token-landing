@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Rocket, Code, Users, Globe } from "lucide-react";
 import { slideUp, timelineDot, timelineLine } from "@/lib/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* 
   ═══════════════════════════════════════════════
@@ -16,56 +17,8 @@ import { slideUp, timelineDot, timelineLine } from "@/lib/animations";
   ═══════════════════════════════════════════════
 */
 
-const milestones = [
-  {
-    icon: Rocket,
-    phase: "Q1 2025",
-    title: "Token Launch",
-    items: [
-      "Smart contract deployment",
-      "Security audit completion",
-      "Token sale begins",
-      "Initial DEX listing"
-    ],
-    status: "completed"
-  },
-  {
-    icon: Code,
-    phase: "Q2 2025",
-    title: "Platform Development",
-    items: [
-      "DApp beta release",
-      "Staking mechanism launch",
-      "Mobile app development",
-      "Partnership announcements"
-    ],
-    status: "in-progress"
-  },
-  {
-    icon: Users,
-    phase: "Q3 2025",
-    title: "Community Growth",
-    items: [
-      "Governance implementation",
-      "Community voting system",
-      "Ambassador program",
-      "Marketing expansion"
-    ],
-    status: "upcoming"
-  },
-  {
-    icon: Globe,
-    phase: "Q4 2025",
-    title: "Global Expansion",
-    items: [
-      "Major CEX listings",
-      "Cross-chain integration",
-      "Enterprise partnerships",
-      "Ecosystem grants program"
-    ],
-    status: "upcoming"
-  }
-];
+const milestoneIcons = [Rocket, Code, Users, Globe];
+const phaseKeys = ['q1', 'q2', 'q3', 'q4'] as const;
 
 const statusColors = {
   completed: "from-green-400 to-green-600",
@@ -73,7 +26,14 @@ const statusColors = {
   upcoming: "from-steel-400 to-steel-600"
 };
 
+const statusMap = {
+  completed: "completed" as const,
+  "in-progress": "in-progress" as const,
+  upcoming: "upcoming" as const
+};
+
 export default function RoadmapSection() {
+  const { t } = useLanguage();
   return (
     <section className="relative py-32 px-6 bg-gradient-to-b from-steel-900 to-steel-800 overflow-hidden">
       {/* 🎨 Background decoration */}
@@ -92,11 +52,10 @@ export default function RoadmapSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-            <span className="text-gradient">Roadmap</span>
+            <span className="text-gradient">{t.roadmap.title}</span>
           </h2>
           <p className="text-xl text-steel-300 max-w-2xl mx-auto">
-            Our journey to revolutionize decentralized finance.
-            Transparent milestones with clear deliverables.
+            {t.roadmap.subtitle}
           </p>
         </motion.div>
 
@@ -122,7 +81,17 @@ export default function RoadmapSection() {
 
           {/* 🎯 Milestones grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
-            {milestones.map((milestone, index) => (
+            {phaseKeys.map((phaseKey, index) => {
+              const Icon = milestoneIcons[index];
+              const phase = t.roadmap.phases[phaseKey];
+              const milestone = {
+                icon: Icon,
+                phase: phase.quarter,
+                title: phase.title,
+                items: phase.milestones,
+                status: phase.status as 'completed' | 'in-progress' | 'upcoming'
+              };
+              return (
               <motion.div
                 key={index}
                 variants={slideUp}
@@ -204,14 +173,15 @@ export default function RoadmapSection() {
                       milestone.status === "in-progress" ? "text-accent-blue" :
                       "text-steel-400"
                     }`}>
-                      {milestone.status === "completed" && "✓ Completed"}
-                      {milestone.status === "in-progress" && "⚡ In Progress"}
-                      {milestone.status === "upcoming" && "⏳ Upcoming"}
+                      {milestone.status === "completed" && `✓ ${t.roadmap.statusLabels.completed}`}
+                      {milestone.status === "in-progress" && `⚡ ${t.roadmap.statusLabels['in-progress']}`}
+                      {milestone.status === "upcoming" && `⏳ ${t.roadmap.statusLabels.upcoming}`}
                     </span>
                   </div>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

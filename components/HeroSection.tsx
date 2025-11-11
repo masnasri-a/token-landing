@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
 import { slideUp, staggerContainer, staggerItem, floatAnimation } from "@/lib/animations";
 import { useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* 
   ═══════════════════════════════════════════════
@@ -18,6 +19,7 @@ import { useRef } from "react";
 */
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   
   // 🎢 Parallax scroll effect
@@ -82,11 +84,11 @@ export default function HeroSection() {
           className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 leading-tight"
         >
           <span className="text-gradient">
-            Own the Future
+            {t.hero.title.line1}
           </span>
           <br />
           <span className="text-steel-100">
-            of Digital Assets
+            {t.hero.title.line2}
           </span>
         </motion.h1>
 
@@ -95,8 +97,7 @@ export default function HeroSection() {
           variants={staggerItem}
           className="text-xl md:text-2xl text-steel-300 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Join our Ethereum-powered token sale and shape decentralized finance.
-          Built on the trusted ERC-20 standard.
+          {t.hero.subtitle}
         </motion.p>
 
         {/* 🎯 CTA Buttons */}
@@ -114,7 +115,7 @@ export default function HeroSection() {
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             
             <span className="relative flex items-center gap-2">
-              Buy Token Now
+              {t.hero.cta.primary}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </motion.button>
@@ -126,7 +127,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
           >
             <FileText className="w-5 h-5" />
-            Read Whitepaper
+            {t.hero.cta.secondary}
           </motion.button>
         </motion.div>
 
@@ -136,9 +137,9 @@ export default function HeroSection() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {[
-            { label: "Token Price", value: "0.01 ETH" },
-            { label: "Total Supply", value: "100M" },
-            { label: "Network", value: "Ethereum" }
+            { label: t.hero.stats.price, value: "Rp 1.000" },
+            { label: t.hero.stats.supply, value: "100M" },
+            { label: t.hero.stats.listed, value: "Indodax" }
           ].map((stat, index) => (
             <motion.div
               key={index}

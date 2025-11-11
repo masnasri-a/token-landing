@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Twitter, Send, Github, MessageCircle } from "lucide-react";
 import { slideUp, rotateContinuous } from "@/lib/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* 
   ═══════════════════════════════════════════════
@@ -23,14 +24,15 @@ const socialLinks = [
   { icon: MessageCircle, label: "Discord", href: "#" },
 ];
 
-const footerLinks = {
-  Product: ["Features", "Tokenomics", "Whitepaper", "Roadmap"],
-  Resources: ["Documentation", "API", "Support", "FAQ"],
-  Company: ["About", "Blog", "Careers", "Contact"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
-};
-
 export default function Footer() {
+  const { t } = useLanguage();
+  
+  const footerLinks = {
+    [t.footer.links.product.title]: t.footer.links.product.items,
+    [t.footer.links.exchanges.title]: t.footer.links.exchanges.items,
+    [t.footer.links.company.title]: t.footer.links.company.items,
+    [t.footer.links.legal.title]: t.footer.links.legal.items,
+  };
   return (
     <footer className="relative bg-steel-800 border-t border-steel-700">
       {/* 🎨 Background effects */}
@@ -60,8 +62,7 @@ export default function Footer() {
             </div>
 
             <p className="text-steel-400 leading-relaxed mb-6">
-              Building the future of decentralized finance on Ethereum.
-              Secure, transparent, and community-driven token ecosystem.
+              {t.footer.description}
             </p>
 
             {/* 🔗 Social links */}
@@ -119,17 +120,17 @@ export default function Footer() {
         >
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl font-heading font-bold text-steel-100 mb-4">
-              Stay Updated
+              {t.footer.newsletter.title}
             </h3>
             <p className="text-steel-400 mb-6">
-              Subscribe to our newsletter for the latest updates, announcements, and exclusive offers.
+              {t.footer.newsletter.subtitle}
             </p>
 
             {/* 📝 Subscription form */}
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <motion.input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t.footer.newsletter.placeholder}
                 className="flex-1 px-6 py-3 bg-steel-700 border border-steel-600 rounded-xl text-steel-100 placeholder:text-steel-500 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/50 transition-all"
                 whileFocus={{ scale: 1.02 }}
               />
@@ -139,7 +140,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Subscribe
+                {t.footer.newsletter.button}
               </motion.button>
             </form>
           </div>
@@ -154,7 +155,7 @@ export default function Footer() {
           transition={{ delay: 0.5 }}
         >
           <p className="text-steel-500 text-sm">
-            © 2025 EthToken. All rights reserved.
+            {t.footer.copyright}
           </p>
 
           <div className="flex gap-6 text-sm">
@@ -163,21 +164,21 @@ export default function Footer() {
               className="text-steel-500 hover:text-accent-blue transition-colors"
               whileHover={{ y: -2 }}
             >
-              Privacy
+              {t.footer.bottomLinks.privacy}
             </motion.a>
             <motion.a
               href="#"
               className="text-steel-500 hover:text-accent-blue transition-colors"
               whileHover={{ y: -2 }}
             >
-              Terms
+              {t.footer.bottomLinks.terms}
             </motion.a>
             <motion.a
               href="#"
               className="text-steel-500 hover:text-accent-blue transition-colors"
               whileHover={{ y: -2 }}
             >
-              Cookies
+              {t.footer.bottomLinks.cookies}
             </motion.a>
           </div>
         </motion.div>

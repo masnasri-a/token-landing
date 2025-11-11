@@ -4,6 +4,7 @@ import TokenomicsSection from "@/components/TokenomicsSection";
 import HowToBuySection from "@/components/HowToBuySection";
 import RoadmapSection from "@/components/RoadmapSection";
 import Footer from "@/components/Footer";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 /* 
   ═══════════════════════════════════════════════
@@ -11,6 +12,7 @@ import Footer from "@/components/Footer";
   
   Web3 Token Sale Landing Page
   Theme: Light Steel Industrial Minimal Futuristic
+  Dual Language: English (primary) & Indonesian
   
   Tech Stack:
   - Next.js 15 (App Router)
@@ -37,6 +39,9 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="relative overflow-hidden">
+      {/* 🌐 Language Switcher - Fixed top right */}
+      <LanguageSwitcher />
+      
       {/* 🚀 Hero Section - Full screen intro with CTA */}
       <HeroSection />
       
