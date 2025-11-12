@@ -9,21 +9,63 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Light Steel Palette - Industrial Minimal Futuristic Theme
+        // Dark Mode Base Colors
+        background: {
+          primary: '#000000',    // Pure Black
+          secondary: '#1A1A1A',  // Very Dark Gray
+        },
+        
+        // Text Colors
+        text: {
+          primary: '#FFFFFF',    // White
+          secondary: '#E5E5E5',  // Light Gray
+          muted: '#A1A1A1',     // Medium Gray
+        },
+        
+        // Green Accent (Primary Action Color)
+        green: {
+          electric: '#00FF00',   // Electric Green
+          bright: '#00E600',     // Slightly Toned Down
+          dark: '#00B300',       // Darker Green
+          glow: 'rgba(0, 255, 0, 0.5)', // Green with transparency
+        },
+        
+        // Warning/Error (Red - Muted)
+        red: {
+          muted: '#CC4444',      // Muted Red
+          dark: '#B33333',       // Dark Red
+        },
+        
+        // Legacy Steel Colors (for gradual migration)
         steel: {
-          50: '#F8FAFC',   // Lightest - almost white
-          100: '#E4E7EB',  // Very light gray-blue
-          200: '#CBD5E1',  // Light steel
-          300: '#9CA3AF',  // Medium steel
-          400: '#6B7280',  // Steel gray
-          500: '#4B5563',  // Dark steel
-          600: '#374151',  // Darker steel
-          700: '#1F2937',  // Very dark
-          800: '#111827',  // Almost black
+          50: '#f8fafc',
+          100: '#f1f5f9', 
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
         },
-        accent: {
-          blue: '#3B82F6', // Neon blue accent
+        
+        // Accent colors for backwards compatibility (now using green)
+        primary: {
+          50: '#e6ffe6',
+          100: '#ccffcc',
+          200: '#99ff99',
+          300: '#66ff66',
+          400: '#33ff33',
+          500: '#00ff00',  // Electric Green
+          600: '#00e600',
+          700: '#00cc00',
+          800: '#00b300',
+          900: '#009900',
         },
+        
+        'accent-blue': '#00FF00',  // Override blue with green
+        'accent-green': '#00FF00', // New green accent
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

@@ -23,10 +23,11 @@ const stepKeys = ['step1', 'step2', 'step3'] as const;
 export default function HowToBuySection() {
   const { t } = useLanguage();
   return (
-    <section className="relative py-32 px-6 bg-steel-800">
-      {/* 🎨 Background effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-accent-blue/20 to-transparent blur-3xl" />
+    <section className="relative py-32 px-6 bg-background-primary">
+      {/* 🎨 Background Effects */}
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-electric rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-electric rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -41,7 +42,7 @@ export default function HowToBuySection() {
           <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
             <span className="text-gradient">{t.howToBuy.title}</span>
           </h2>
-          <p className="text-xl text-steel-300 max-w-2xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
             {t.howToBuy.subtitle}
           </p>
         </motion.div>
@@ -65,17 +66,17 @@ export default function HowToBuySection() {
               >
                 {/* 🔗 Connecting line (not on last item) */}
                 {index < stepKeys.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-accent-blue to-transparent" />
+                  <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-green-electric to-transparent" />
                 )}
 
                 {/* 🎴 Step card */}
-                <div className="glass p-8 rounded-3xl hover:bg-white/15 transition-all duration-300 border border-steel-600/30 h-full flex flex-col">
+                <div className="glass p-8 rounded-3xl hover:bg-green-electric/5 transition-all duration-300 border border-green-electric/20 h-full flex flex-col">
                   {/* 🔢 Step number badge */}
                   <motion.div
-                    className="inline-flex items-center gap-2 bg-accent-blue/20 text-accent-blue px-4 py-2 rounded-full text-sm font-bold mb-6 w-fit"
+                    className="inline-flex items-center gap-2 bg-green-electric/20 text-green-electric px-4 py-2 rounded-full text-sm font-bold mb-6 w-fit glow-green"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <span className="w-6 h-6 bg-accent-blue rounded-full flex items-center justify-center text-white text-xs">
+                    <span className="w-6 h-6 bg-green-electric rounded-full flex items-center justify-center text-background-primary text-xs">
                       {index + 1}
                     </span>
                     {step.label}
@@ -83,26 +84,24 @@ export default function HowToBuySection() {
 
                   {/* 🎯 Icon */}
                   <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-accent-blue/30 blur-2xl rounded-full" />
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-accent-blue to-steel-500 rounded-2xl flex items-center justify-center">
-                      <Icon className="w-10 h-10 text-white" strokeWidth={2} />
+                    <div className="absolute inset-0 bg-green-electric/30 blur-2xl rounded-full" />
+                    <div className="relative w-20 h-20 bg-gradient-to-br from-green-electric to-green-dark rounded-2xl flex items-center justify-center glow-green">
+                      <Icon className="w-10 h-10 text-background-primary" strokeWidth={2} />
                     </div>
                   </div>
 
-                  {/* 📝 Content */}
-                  <h3 className="text-2xl font-heading font-bold text-steel-100 mb-4">
+                  {/* 📝 Step content */}
+                  <h3 className="text-2xl font-heading font-bold mb-4 text-text-primary hover:text-green-electric transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-steel-400 leading-relaxed mb-6 flex-grow">
+                  <p className="text-text-secondary leading-relaxed flex-grow">
                     {step.description}
-                  </p>
-
-                  {/* 🔘 Action button */}
+                  </p>                  {/* 🔘 Action button */}
                   <motion.button
-                    className={`w-full py-4 rounded-xl font-heading font-semibold text-lg transition-all ${
+                    className={`w-full py-4 rounded-xl font-heading font-semibold text-lg transition-all mt-6 ${
                       index === 2
-                        ? 'bg-accent-blue text-white shadow-lg shadow-accent-blue/50'
-                        : 'bg-steel-700 text-steel-300 hover:bg-steel-600'
+                        ? 'btn-primary'
+                        : 'bg-background-secondary text-text-secondary hover:bg-green-electric/10 border border-green-electric/30'
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
@@ -118,14 +117,14 @@ export default function HowToBuySection() {
 
         {/* 💡 Additional info */}
         <motion.div
-          className="mt-16 glass p-8 rounded-2xl text-center max-w-3xl mx-auto border border-accent-blue/30"
+          className="mt-16 glass p-8 rounded-2xl text-center max-w-3xl mx-auto border border-green-electric/30"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <p className="text-steel-300 text-lg">
-            <span className="text-accent-blue font-bold">{t.howToBuy.tip.label}</span> {t.howToBuy.tip.text}
+          <p className="text-lg">
+            <span className="text-red-700 font-bold">{t.howToBuy.tip.label}</span> {t.howToBuy.tip.text}
           </p>
         </motion.div>
       </div>

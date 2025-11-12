@@ -6,8 +6,8 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 /* 
   ═══════════════════════════════════════════════
   🏗️ ROOT LAYOUT - Next.js 15 App Router
-  Light Steel Theme | Web3 Token Sale Landing
-  Dual Language: English (primary) & Indonesian
+  Premium Dark Theme | WEALTH TOKEN Landing
+  Electric Green Accents | Dual Language Support
   ═══════════════════════════════════════════════
 */
 
@@ -24,9 +24,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WEALTH TOKEN ($WEALTH) - Token Crypto Terpercaya di Indodax",
-  description: "Investasi WEALTH TOKEN ($WEALTH) yang listing di Indodax dan exchange terpercaya Indonesia. Beli token dengan mudah, aman, dan menguntungkan.",
-  keywords: "wealth token, $WEALTH, crypto, token, indodax, investasi crypto, blockchain, cryptocurrency indonesia, jual beli crypto",
+  title: "WEALTH TOKEN ($WEALTH) - Premium Crypto Investment",
+  description: "Experience the future of wealth generation with WEALTH TOKEN ($WEALTH). A premium cryptocurrency investment opportunity with cutting-edge technology and exceptional growth potential.",
+  keywords: "wealth token, $WEALTH, crypto investment, premium token, blockchain technology, cryptocurrency, digital assets, wealth generation",
 };
 
 export default function RootLayout({
@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
+    <html lang="en" className="scroll-smooth dark">
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-background-primary text-text-primary antialiased`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

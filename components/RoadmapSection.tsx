@@ -21,9 +21,9 @@ const milestoneIcons = [Rocket, Code, Users, Globe];
 const phaseKeys = ['q1', 'q2', 'q3', 'q4'] as const;
 
 const statusColors = {
-  completed: "from-green-400 to-green-600",
-  "in-progress": "from-accent-blue to-blue-600",
-  upcoming: "from-steel-400 to-steel-600"
+  completed: "from-green-bright to-green-dark",
+  "in-progress": "from-green-electric to-green-bright",
+  upcoming: "from-text-muted to-text-secondary"
 };
 
 const statusMap = {
@@ -35,11 +35,11 @@ const statusMap = {
 export default function RoadmapSection() {
   const { t } = useLanguage();
   return (
-    <section className="relative py-32 px-6 bg-gradient-to-b from-steel-900 to-steel-800 overflow-hidden">
+    <section className="relative py-32 px-6 bg-gradient-to-b from-background-primary to-background-secondary overflow-hidden">
       {/* 🎨 Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-accent-blue rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-accent-blue rounded-full blur-[150px]" />
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-green-electric rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-green-electric rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -54,7 +54,7 @@ export default function RoadmapSection() {
           <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
             <span className="text-gradient">{t.roadmap.title}</span>
           </h2>
-          <p className="text-xl text-steel-300 max-w-2xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
             {t.roadmap.subtitle}
           </p>
         </motion.div>
@@ -63,14 +63,14 @@ export default function RoadmapSection() {
         <div className="relative">
           {/* 📏 Timeline line (horizontal) */}
           <motion.div
-            className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-steel-700 origin-left"
+            className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-background-secondary origin-left"
             variants={timelineLine}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.div 
-              className="h-full bg-gradient-to-r from-accent-blue to-green-500"
+              className="h-full bg-gradient-to-r from-green-electric to-green-bright glow-green"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
@@ -112,12 +112,12 @@ export default function RoadmapSection() {
                 >
                   <div className={`w-full h-full rounded-full bg-gradient-to-r ${statusColors[milestone.status as keyof typeof statusColors]} shadow-lg`}>
                     <motion.div
-                      className="w-full h-full rounded-full"
+                      className="w-full h-full rounded-full glow-green"
                       animate={milestone.status === "in-progress" ? {
                         boxShadow: [
-                          "0 0 20px rgba(59, 130, 246, 0.8)",
-                          "0 0 40px rgba(59, 130, 246, 1)",
-                          "0 0 20px rgba(59, 130, 246, 0.8)"
+                          "0 0 20px rgba(0, 255, 0, 0.8)",
+                          "0 0 40px rgba(0, 255, 0, 1)",
+                          "0 0 20px rgba(0, 255, 0, 0.8)"
                         ]
                       } : {}}
                       transition={{
@@ -130,22 +130,22 @@ export default function RoadmapSection() {
                 </motion.div>
 
                 {/* 🎴 Milestone card */}
-                <div className="glass p-6 rounded-2xl hover:bg-white/15 transition-all duration-300 border border-steel-600/30 mt-32 md:mt-28">
+                <div className="glass p-6 rounded-2xl hover:bg-green-electric/5 transition-all duration-300 border border-green-electric/20 mt-32 md:mt-28">
                   {/* 🎯 Icon */}
                   <div className="relative mb-6">
                     <div className={`absolute inset-0 bg-gradient-to-r ${statusColors[milestone.status as keyof typeof statusColors]} blur-xl opacity-60 rounded-full`} />
-                    <div className={`relative w-16 h-16 bg-gradient-to-br ${statusColors[milestone.status as keyof typeof statusColors]} rounded-2xl flex items-center justify-center`}>
-                      <milestone.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                    <div className={`relative w-16 h-16 bg-gradient-to-br ${statusColors[milestone.status as keyof typeof statusColors]} rounded-2xl flex items-center justify-center glow-green`}>
+                      <milestone.icon className="w-8 h-8 text-background-primary" strokeWidth={2.5} />
                     </div>
                   </div>
 
                   {/* 📅 Phase badge */}
-                  <div className="inline-block bg-accent-blue/20 text-accent-blue px-3 py-1 rounded-full text-xs font-bold mb-3">
+                  <div className="inline-block bg-green-electric/20 text-green-electric px-3 py-1 rounded-full text-xs font-bold mb-3 glow-green">
                     {milestone.phase}
                   </div>
 
                   {/* 📝 Title */}
-                  <h3 className="text-xl font-heading font-bold text-steel-100 mb-4">
+                  <h3 className="text-xl font-heading font-bold text-text-primary mb-4">
                     {milestone.title}
                   </h3>
 
@@ -154,24 +154,24 @@ export default function RoadmapSection() {
                     {milestone.items.map((item, itemIndex) => (
                       <motion.li
                         key={itemIndex}
-                        className="flex items-start gap-2 text-steel-400 text-sm"
+                        className="flex items-start gap-2 text-text-secondary text-sm"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.2 + itemIndex * 0.1 + 0.3 }}
                       >
-                        <span className={`inline-block w-1.5 h-1.5 rounded-full mt-1.5 bg-gradient-to-r ${statusColors[milestone.status as keyof typeof statusColors]}`} />
+                        <span className={`inline-block w-1.5 h-1.5 rounded-full mt-1.5 bg-gradient-to-r ${statusColors[milestone.status as keyof typeof statusColors]} glow-green`} />
                         {item}
                       </motion.li>
                     ))}
                   </ul>
 
                   {/* 🏷️ Status badge */}
-                  <div className="mt-4 pt-4 border-t border-steel-700">
+                  <div className="mt-4 pt-4 border-t border-green-electric/20">
                     <span className={`text-xs font-semibold uppercase tracking-wide ${
-                      milestone.status === "completed" ? "text-green-400" :
-                      milestone.status === "in-progress" ? "text-accent-blue" :
-                      "text-steel-400"
+                      milestone.status === "completed" ? "text-green-bright" :
+                      milestone.status === "in-progress" ? "text-green-electric" :
+                      "text-text-muted"
                     }`}>
                       {milestone.status === "completed" && `✓ ${t.roadmap.statusLabels.completed}`}
                       {milestone.status === "in-progress" && `⚡ ${t.roadmap.statusLabels['in-progress']}`}

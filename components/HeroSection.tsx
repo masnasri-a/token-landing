@@ -38,14 +38,14 @@ export default function HeroSection() {
     >
       {/* 🎨 Animated gradient background */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-steel-700 via-steel-800 to-accent-blue"
+        className="absolute inset-0 bg-gradient-to-br from-background-primary via-background-secondary to-green-electric/20"
         style={{ y }}
       />
 
       {/* ✨ Particle effect overlay */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-accent-blue rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-steel-500 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-20 left-20 w-96 h-96 bg-green-electric rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-green-bright rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
       </div>
 
       {/* 🎯 Main content container */}
@@ -61,9 +61,9 @@ export default function HeroSection() {
           className="mx-auto mb-12 w-32 h-32 relative"
           {...floatAnimation}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-accent-blue to-steel-400 rounded-full blur-xl opacity-60 animate-pulse-glow" />
+          <div className="absolute inset-0 bg-gradient-to-br from-green-electric to-green-bright rounded-full blur-xl opacity-60 animate-pulse-glow" />
           <motion.div 
-            className="relative w-full h-full bg-gradient-to-br from-accent-blue via-steel-300 to-accent-blue rounded-full flex items-center justify-center shadow-2xl border-4 border-steel-700/50 overflow-hidden"
+            className="relative w-full h-full bg-gradient-to-br from-green-electric via-background-secondary to-green-electric rounded-full flex items-center justify-center shadow-2xl border-4 border-green-electric/50 overflow-hidden glow-green-strong"
             animate={{
               rotate: 360,
             }}
@@ -82,7 +82,7 @@ export default function HeroSection() {
               onError={(e) => {
                 // Fallback jika logo belum ada
                 e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement!.innerHTML = '<span class="text-5xl font-bold text-steel-800">W</span>';
+                e.currentTarget.parentElement!.innerHTML = '<span class="text-5xl font-bold text-background-primary">W</span>';
               }}
             />
           </motion.div>
@@ -105,7 +105,7 @@ export default function HeroSection() {
         {/* 📝 Subheading */}
         <motion.p
           variants={staggerItem}
-          className="text-xl md:text-2xl text-steel-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed"
         >
           {t.hero.subtitle}
         </motion.p>
@@ -117,7 +117,7 @@ export default function HeroSection() {
         >
           {/* Primary CTA - Buy Token */}
           <motion.button
-            className="group relative px-8 py-4 bg-accent-blue text-white rounded-xl font-heading font-semibold text-lg overflow-hidden shadow-2xl"
+            className="btn-primary group relative px-8 py-4 rounded-xl font-heading font-semibold text-lg overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -132,7 +132,7 @@ export default function HeroSection() {
 
           {/* Secondary CTA - Whitepaper */}
           <motion.button
-            className="group px-8 py-4 glass hover:bg-white/20 text-steel-100 rounded-xl font-heading font-semibold text-lg transition-all duration-300 flex items-center gap-2 shadow-lg border border-steel-500/30"
+            className="btn-secondary group px-8 py-4 rounded-xl font-heading font-semibold text-lg flex items-center gap-2 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -153,12 +153,12 @@ export default function HeroSection() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="glass p-6 rounded-2xl"
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
+              className="glass p-6 rounded-2xl glow-green/20"
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 255, 0, 0.05)" }}
             >
-              <div className="text-4xl font-heading font-bold text-accent-blue mb-2">{stat.value}</div>
-              <div className="text-steel-100 text-sm uppercase tracking-wider">{stat.label}</div>
-              {stat.unit && <div className="text-steel-300 text-xs">{stat.unit}</div>}
+              <div className="text-money text-4xl font-heading font-bold mb-2 ">{stat.value}</div>
+              <div className="text-text-primary text-sm uppercase tracking-wider">{stat.label}</div>
+              {stat.unit && <div className="text-text-muted text-xs">{stat.unit}</div>}
             </motion.div>
           ))}
         </motion.div>
@@ -170,9 +170,9 @@ export default function HeroSection() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-steel-400 rounded-full flex justify-center p-2">
+        <div className="w-6 h-10 border-2 border-green-electric rounded-full flex justify-center p-2">
           <motion.div
-            className="w-1.5 h-1.5 bg-accent-blue rounded-full"
+            className="w-1.5 h-1.5 bg-green-electric rounded-full"
             animate={{ y: [0, 16, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           />

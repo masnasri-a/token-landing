@@ -34,10 +34,10 @@ export default function Footer() {
     [t.footer.links.legal.title]: t.footer.links.legal.items,
   };
   return (
-    <footer className="relative bg-steel-800 border-t border-steel-700">
+    <footer className="relative bg-background-primary border-t border-background-secondary">
       {/* 🎨 Background effects */}
-      <div className="absolute inset-0 overflow-hidden opacity-5">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-blue rounded-full blur-[150px]" />
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-green-electric rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
@@ -53,7 +53,7 @@ export default function Footer() {
             {/* 💫 Logo with rotating icon */}
             <div className="flex items-center gap-4 mb-6">
               <motion.div
-                className="w-12 h-12 bg-gradient-to-br from-accent-blue to-steel-500 rounded-xl flex items-center justify-center shadow-lg overflow-hidden"
+                className="w-12 h-12 bg-gradient-to-br from-green-electric to-green-dark rounded-xl flex items-center justify-center shadow-lg overflow-hidden glow-green"
                 {...rotateContinuous}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -64,14 +64,14 @@ export default function Footer() {
                   onError={(e) => {
                     // Fallback jika logo belum ada
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement!.innerHTML = '<span class="text-2xl font-heading font-bold text-white">W</span>';
+                    e.currentTarget.parentElement!.innerHTML = '<span class="text-2xl font-heading font-bold text-background-primary">W</span>';
                   }}
                 />
               </motion.div>
-              <span className="text-2xl font-heading font-bold text-steel-100">WEALTH TOKEN</span>
+              <span className="text-2xl font-heading font-bold text-text-primary">WEALTH TOKEN</span>
             </div>
 
-            <p className="text-steel-400 leading-relaxed mb-6">
+            <p className="text-text-secondary leading-relaxed mb-6">
               {t.footer.description}
             </p>
 
@@ -82,11 +82,11 @@ export default function Footer() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 glass hover:bg-white/20 rounded-lg flex items-center justify-center transition-all group"
+                  className="w-10 h-10 glass hover:bg-green-electric/20 rounded-lg flex items-center justify-center transition-all group"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <social.icon className="w-5 h-5 text-steel-400 group-hover:text-accent-blue transition-colors" />
+                  <social.icon className="w-5 h-5 text-text-muted group-hover:text-green-electric transition-colors" />
                 </motion.a>
               ))}
             </div>
@@ -102,13 +102,13 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ delay: categoryIndex * 0.1 }}
             >
-              <h4 className="text-steel-100 font-heading font-bold mb-4 text-lg">{category}</h4>
+              <h4 className="text-text-primary font-heading font-bold mb-4 text-lg">{category}</h4>
               <ul className="space-y-3">
                 {links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <motion.a
                       href="#"
-                      className="text-steel-400 hover:text-accent-blue transition-colors text-sm"
+                      className="text-text-muted hover:text-green-electric transition-colors text-sm"
                       whileHover={{ x: 4 }}
                     >
                       {link}
@@ -122,17 +122,17 @@ export default function Footer() {
 
         {/* 📧 Newsletter section */}
         <motion.div
-          className="border-t border-steel-700 pt-12 mb-12"
+          className="border-t border-background-secondary pt-12 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-heading font-bold text-steel-100 mb-4">
+            <h3 className="text-2xl font-heading font-bold text-text-primary mb-4">
               {t.footer.newsletter.title}
             </h3>
-            <p className="text-steel-400 mb-6">
+            <p className="text-text-secondary mb-6">
               {t.footer.newsletter.subtitle}
             </p>
 
@@ -141,51 +141,56 @@ export default function Footer() {
               <motion.input
                 type="email"
                 placeholder={t.footer.newsletter.placeholder}
-                className="flex-1 px-6 py-3 bg-steel-700 border border-steel-600 rounded-xl text-steel-100 placeholder:text-steel-500 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/50 transition-all"
+                className="flex-1 px-6 py-3 bg-background-secondary border border-background-secondary text-text-primary placeholder:text-text-muted focus:outline-none focus:border-green-electric focus:ring-2 focus:ring-green-electric/50 transition-all rounded-xl"
                 whileFocus={{ scale: 1.02 }}
               />
               <motion.button
                 type="submit"
-                className="px-8 py-3 bg-accent-blue hover:bg-blue-600 text-white font-heading font-semibold rounded-xl transition-all shadow-lg shadow-accent-blue/30"
+                className="btn-primary px-8 py-3 font-heading font-semibold rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {t.footer.newsletter.button}
               </motion.button>
             </form>
+
+            {/* Error message example */}
+            <p className="text-error text-xs mt-2 opacity-0 hidden" id="newsletter-error">
+              Please enter a valid email address
+            </p>
           </div>
         </motion.div>
 
         {/* ⚖️ Bottom bar */}
         <motion.div
-          className="border-t border-steel-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="border-t border-background-secondary pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <p className="text-steel-500 text-sm">
+          <p className="text-text-muted text-sm">
             {t.footer.copyright}
           </p>
 
           <div className="flex gap-6 text-sm">
             <motion.a
               href="#"
-              className="text-steel-500 hover:text-accent-blue transition-colors"
+              className="text-text-muted hover:text-green-electric transition-colors"
               whileHover={{ y: -2 }}
             >
               {t.footer.bottomLinks.privacy}
             </motion.a>
             <motion.a
               href="#"
-              className="text-steel-500 hover:text-accent-blue transition-colors"
+              className="text-text-muted hover:text-green-electric transition-colors"
               whileHover={{ y: -2 }}
             >
               {t.footer.bottomLinks.terms}
             </motion.a>
             <motion.a
               href="#"
-              className="text-steel-500 hover:text-accent-blue transition-colors"
+              className="text-text-muted hover:text-green-electric transition-colors"
               whileHover={{ y: -2 }}
             >
               {t.footer.bottomLinks.cookies}

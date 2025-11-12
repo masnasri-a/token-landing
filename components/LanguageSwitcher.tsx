@@ -29,8 +29,8 @@ export default function LanguageSwitcher() {
           onClick={() => setLanguage('en')}
           className={`px-3 py-1 rounded-full text-sm font-heading font-semibold transition-all ${
             language === 'en'
-              ? 'bg-accent-blue text-white'
-              : 'text-steel-400 hover:text-steel-200'
+              ? 'bg-accent-blue text-steel-800'
+              : 'text-steel-200 hover:text-steel-200'
           }`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -42,8 +42,8 @@ export default function LanguageSwitcher() {
           onClick={() => setLanguage('id')}
           className={`px-3 py-1 rounded-full text-sm font-heading font-semibold transition-all ${
             language === 'id'
-              ? 'bg-accent-blue text-white'
-              : 'text-steel-400 hover:text-steel-200'
+              ? 'bg-accent-blue text-steel-800'
+              : 'text-steel-200 hover:text-steel-200'
           }`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
