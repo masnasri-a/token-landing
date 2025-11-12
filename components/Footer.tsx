@@ -50,15 +50,25 @@ export default function Footer() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {/* 💫 Logo with rotating ETH icon */}
+            {/* 💫 Logo with rotating icon */}
             <div className="flex items-center gap-4 mb-6">
               <motion.div
-                className="w-12 h-12 bg-gradient-to-br from-accent-blue to-steel-500 rounded-xl flex items-center justify-center shadow-lg"
+                className="w-12 h-12 bg-gradient-to-br from-accent-blue to-steel-500 rounded-xl flex items-center justify-center shadow-lg overflow-hidden"
                 {...rotateContinuous}
               >
-                <span className="text-2xl font-heading font-bold text-white">₽</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/logo-trans.png" 
+                  alt="WEALTH TOKEN Logo" 
+                  className="w-10 h-10 object-contain"
+                  onError={(e) => {
+                    // Fallback jika logo belum ada
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement!.innerHTML = '<span class="text-2xl font-heading font-bold text-white">W</span>';
+                  }}
+                />
               </motion.div>
-              <span className="text-2xl font-heading font-bold text-steel-100">Rich Token</span>
+              <span className="text-2xl font-heading font-bold text-steel-100">WEALTH TOKEN</span>
             </div>
 
             <p className="text-steel-400 leading-relaxed mb-6">

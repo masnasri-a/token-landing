@@ -1,18 +1,18 @@
-# Rich Token ($RICH) - Web3 Token Sale Landing Page
+# WEALTH TOKEN ($WEALTH) - Web3 Token Sale Landing Page
 
 🎨 **Light Steel Industrial Minimal Futuristic Theme**  
-💰 **Rich Token ($RICH) - Premium Cryptocurrency Investment**
+� **WEALTH TOKEN ($WEALTH) - Premium Cryptocurrency Investment**
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-ff0055)
 
 ## ✨ Features
 
-- 🚀 **Hero Section** - Parallax scrolling background with floating 3D Rich Token ($RICH) orb
-- 💎 **About Rich Token** - Glassmorphism cards with staggered fade-in animations showcasing $RICH features
+- 🚀 **Hero Section** - Parallax scrolling background with floating 3D WEALTH TOKEN ($WEALTH) orb with custom logo
+- 💎 **About WEALTH TOKEN** - Glassmorphism cards with staggered fade-in animations showcasing $WEALTH features
 - 📊 **Tokenomics** - Animated progress bars with scroll reveal
-- 🛒 **How to Buy** - Interactive 3-step guide for purchasing $RICH with pulsing glow effects
-- 🗺️ **Roadmap** - Horizontal timeline showing Rich Token development milestones with sequential reveals and glowing dots
-- 🦶 **Footer** - Social links with continuously rotating Rich Token (₽) icon
+- 🛒 **How to Buy** - Interactive 3-step guide for purchasing $WEALTH with pulsing glow effects
+- 🗺️ **Roadmap** - Horizontal timeline showing WEALTH TOKEN development milestones with sequential reveals and glowing dots
+- 🦶 **Footer** - Social links with continuously rotating WEALTH TOKEN custom logo
 
 ## 🎨 Color Palette - Light Steel
 

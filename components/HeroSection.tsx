@@ -63,7 +63,7 @@ export default function HeroSection() {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-accent-blue to-steel-400 rounded-full blur-xl opacity-60 animate-pulse-glow" />
           <motion.div 
-            className="relative w-full h-full bg-gradient-to-br from-accent-blue via-steel-300 to-accent-blue rounded-full flex items-center justify-center shadow-2xl border-4 border-steel-700/50"
+            className="relative w-full h-full bg-gradient-to-br from-accent-blue via-steel-300 to-accent-blue rounded-full flex items-center justify-center shadow-2xl border-4 border-steel-700/50 overflow-hidden"
             animate={{
               rotate: 360,
             }}
@@ -73,8 +73,18 @@ export default function HeroSection() {
               ease: "linear"
             }}
           >
-            {/* Token symbol */}
-            <span className="text-5xl font-bold text-steel-800">₽</span>
+            {/* Token logo */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/logo-trans.png" 
+              alt="WEALTH TOKEN Logo" 
+              className="w-24 h-24 object-contain"
+              onError={(e) => {
+                // Fallback jika logo belum ada
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement!.innerHTML = '<span class="text-5xl font-bold text-steel-800">W</span>';
+              }}
+            />
           </motion.div>
         </motion.div>
 
@@ -137,8 +147,8 @@ export default function HeroSection() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {[
-            { label: t.hero.stats.price, value: "Rp 1.000", unit: "$RICH" },
-            { label: t.hero.stats.supply, value: "100M", unit: "$RICH" },
+            { label: t.hero.stats.price, value: "Rp 1.000", unit: "$WEALTH" },
+            { label: t.hero.stats.supply, value: "100M", unit: "$WEALTH" },
             { label: t.hero.stats.listed, value: "Indodax", unit: "CEX" }
           ].map((stat, index) => (
             <motion.div
