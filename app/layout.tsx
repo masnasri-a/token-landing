@@ -24,9 +24,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "EthToken - Token Crypto Terpercaya di Indodax",
-  description: "Investasi token crypto yang listing di Indodax dan exchange terpercaya Indonesia. Beli token dengan mudah, aman, dan menguntungkan.",
-  keywords: "crypto, token, indodax, investasi crypto, blockchain, cryptocurrency indonesia, jual beli crypto",
+  title: "Rich Token ($RICH) - Token Crypto Terpercaya di Indodax",
+  description: "Investasi Rich Token ($RICH) yang listing di Indodax dan exchange terpercaya Indonesia. Beli token dengan mudah, aman, dan menguntungkan.",
+  keywords: "rich token, $RICH, crypto, token, indodax, investasi crypto, blockchain, cryptocurrency indonesia, jual beli crypto",
 };
 
 export default function RootLayout({

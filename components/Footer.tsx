@@ -56,9 +56,9 @@ export default function Footer() {
                 className="w-12 h-12 bg-gradient-to-br from-accent-blue to-steel-500 rounded-xl flex items-center justify-center shadow-lg"
                 {...rotateContinuous}
               >
-                <span className="text-2xl font-heading font-bold text-white">Ξ</span>
+                <span className="text-2xl font-heading font-bold text-white">₽</span>
               </motion.div>
-              <span className="text-2xl font-heading font-bold text-steel-100">EthToken</span>
+              <span className="text-2xl font-heading font-bold text-steel-100">Rich Token</span>
             </div>
 
             <p className="text-steel-400 leading-relaxed mb-6">

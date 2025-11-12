@@ -122,7 +122,7 @@ export default function TokenomicsSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {[
-            { label: t.tokenomics.info.supply, value: "100,000,000", unit: "Token" },
+            { label: t.tokenomics.info.supply, value: "100,000,000", unit: "$RICH" },
             { label: t.tokenomics.info.price, value: "Rp 1.000", unit: "IDR" },
             { label: t.tokenomics.info.marketCap, value: "100 Miliar", unit: "IDR" }
           ].map((stat, index) => (

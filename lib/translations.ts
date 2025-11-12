@@ -4,9 +4,9 @@ export const translations = {
     hero: {
       title: {
         line1: "Own the Future",
-        line2: "of Digital Assets"
+        line2: "with Rich Token"
       },
-      subtitle: "Our token is listed on Indodax and trusted exchanges. Start your crypto investment easily and securely.",
+      subtitle: "Rich Token ($RICH) is listed on Indodax and trusted exchanges. Start your crypto investment easily and securely.",
       cta: {
         primary: "Buy on Indodax",
         secondary: "View Whitepaper"
@@ -21,9 +21,9 @@ export const translations = {
     about: {
       title: {
         highlight: "Why Choose",
-        normal: "Our Token?"
+        normal: "Rich Token?"
       },
-      subtitle: "Quality token listed on Indonesia's trusted exchanges. Easy, safe, and profitable crypto investment.",
+      subtitle: "Quality token listed on Indonesia's trusted exchanges. Easy, safe, and profitable crypto investment with $RICH.",
       features: {
         secure: {
           title: "Safe & Trusted",
@@ -31,7 +31,7 @@ export const translations = {
         },
         trading: {
           title: "Easy Trading",
-          description: "Buy and sell tokens easily through your favorite exchange platform. Fast and liquid transactions."
+          description: "Buy and sell $RICH tokens easily through your favorite exchange platform. Fast and liquid transactions."
         },
         community: {
           title: "Strong Community",
@@ -84,8 +84,8 @@ export const translations = {
         },
         step3: {
           label: "Step 3",
-          title: "Buy Token",
-          description: "Find our token trading pair and make a purchase. Tokens go directly to your Indodax wallet.",
+          title: "Buy $RICH Token",
+          description: "Find Rich Token ($RICH) trading pair and make a purchase. Tokens go directly to your Indodax wallet.",
           action: "Buy Token"
         }
       },
@@ -101,12 +101,12 @@ export const translations = {
       phases: {
         q1: {
           quarter: "Q1 2025",
-          title: "Token Launch",
+          title: "Rich Token Launch",
           milestones: [
-            "Deploy smart contract",
+            "Deploy $RICH smart contract",
             "Security audit completed",
             "Listed on Indodax",
-            "Token sale started"
+            "Rich Token sale started"
           ],
           status: "completed"
         },
@@ -152,7 +152,7 @@ export const translations = {
     },
     // Footer Section
     footer: {
-      description: "Trusted crypto token listed on Indodax and Indonesian exchanges. Safe, easy, and profitable investment for your digital future.",
+      description: "Rich Token ($RICH) - Trusted crypto token listed on Indodax and Indonesian exchanges. Safe, easy, and profitable investment for your digital future.",
       links: {
         product: {
           title: "Product",
@@ -177,7 +177,7 @@ export const translations = {
         placeholder: "Enter your email",
         button: "Subscribe"
       },
-      copyright: "© 2025 EthToken. All rights reserved.",
+      copyright: "© 2025 Rich Token ($RICH). All rights reserved.",
       bottomLinks: {
         privacy: "Privacy",
         terms: "Terms & Conditions",
@@ -195,9 +195,9 @@ export const translations = {
     hero: {
       title: {
         line1: "Miliki Masa Depan",
-        line2: "Aset Digital"
+        line2: "Rich Token"
       },
-      subtitle: "Token kami telah listing di Indodax dan exchange terpercaya lainnya. Mulai investasi crypto Anda dengan mudah dan aman.",
+      subtitle: "Rich Token ($RICH) telah listing di Indodax dan exchange terpercaya lainnya. Mulai investasi crypto Anda dengan mudah dan aman.",
       cta: {
         primary: "Beli di Indodax",
         secondary: "Lihat Whitepaper"
@@ -212,9 +212,9 @@ export const translations = {
     about: {
       title: {
         highlight: "Mengapa Memilih",
-        normal: "Token Kami?"
+        normal: "Rich Token?"
       },
-      subtitle: "Token berkualitas dengan listing di exchange terpercaya Indonesia. Investasi crypto yang mudah, aman, dan menguntungkan.",
+      subtitle: "Token berkualitas dengan listing di exchange terpercaya Indonesia. Investasi crypto $RICH yang mudah, aman, dan menguntungkan.",
       features: {
         secure: {
           title: "Aman & Terpercaya",
@@ -222,7 +222,7 @@ export const translations = {
         },
         trading: {
           title: "Trading Mudah",
-          description: "Beli dan jual token dengan mudah melalui platform exchange favorit Anda. Transaksi cepat dan likuid."
+          description: "Beli dan jual token $RICH dengan mudah melalui platform exchange favorit Anda. Transaksi cepat dan likuid."
         },
         community: {
           title: "Komunitas Kuat",
@@ -275,8 +275,8 @@ export const translations = {
         },
         step3: {
           label: "Langkah 3",
-          title: "Beli Token",
-          description: "Cari pair trading token kami dan lakukan pembelian. Token langsung masuk ke wallet Indodax Anda.",
+          title: "Beli Token $RICH",
+          description: "Cari pair trading Rich Token ($RICH) dan lakukan pembelian. Token langsung masuk ke wallet Indodax Anda.",
           action: "Beli Token"
         }
       },
@@ -292,12 +292,12 @@ export const translations = {
       phases: {
         q1: {
           quarter: "Q1 2025",
-          title: "Peluncuran Token",
+          title: "Peluncuran Rich Token",
           milestones: [
-            "Deploy smart contract",
+            "Deploy smart contract $RICH",
             "Audit keamanan selesai",
             "Listing di Indodax",
-            "Token sale dimulai"
+            "Rich Token sale dimulai"
           ],
           status: "completed"
         },
@@ -343,7 +343,7 @@ export const translations = {
     },
     // Footer Section
     footer: {
-      description: "Token crypto terpercaya yang listing di Indodax dan exchange Indonesia. Investasi aman, mudah, dan menguntungkan untuk masa depan digital Anda.",
+      description: "Rich Token ($RICH) - Token crypto terpercaya yang listing di Indodax dan exchange Indonesia. Investasi aman, mudah, dan menguntungkan untuk masa depan digital Anda.",
       links: {
         product: {
           title: "Produk",
@@ -368,7 +368,7 @@ export const translations = {
         placeholder: "Masukkan email Anda",
         button: "Berlangganan"
       },
-      copyright: "© 2025 EthToken. Hak cipta dilindungi.",
+      copyright: "© 2025 Rich Token ($RICH). Hak cipta dilindungi.",
       bottomLinks: {
         privacy: "Privasi",
         terms: "Syarat & Ketentuan",

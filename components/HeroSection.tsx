@@ -74,7 +74,7 @@ export default function HeroSection() {
             }}
           >
             {/* Token symbol */}
-            <span className="text-5xl font-bold text-steel-800">Ξ</span>
+            <span className="text-5xl font-bold text-steel-800">₽</span>
           </motion.div>
         </motion.div>
 
@@ -137,9 +137,9 @@ export default function HeroSection() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {[
-            { label: t.hero.stats.price, value: "Rp 1.000" },
-            { label: t.hero.stats.supply, value: "100M" },
-            { label: t.hero.stats.listed, value: "Indodax" }
+            { label: t.hero.stats.price, value: "Rp 1.000", unit: "$RICH" },
+            { label: t.hero.stats.supply, value: "100M", unit: "$RICH" },
+            { label: t.hero.stats.listed, value: "Indodax", unit: "CEX" }
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -148,6 +148,7 @@ export default function HeroSection() {
             >
               <div className="text-4xl font-heading font-bold text-accent-blue mb-2">{stat.value}</div>
               <div className="text-steel-100 text-sm uppercase tracking-wider">{stat.label}</div>
+              {stat.unit && <div className="text-steel-300 text-xs">{stat.unit}</div>}
             </motion.div>
           ))}
         </motion.div>
