@@ -21,9 +21,9 @@ const milestoneIcons = [Rocket, Code, Users, Globe];
 const phaseKeys = ['q1', 'q2', 'q3', 'q4'] as const;
 
 const statusColors = {
-  completed: "from-green-bright to-green-dark",
-  "in-progress": "from-green-electric to-green-bright",
-  upcoming: "from-text-muted to-text-secondary"
+  completed: "from-red-500 to-red-bright",
+  "in-progress": "from-green-500 to-red-bright",
+  upcoming: "from-gray-600 to-gray-500"
 };
 
 const statusMap = {

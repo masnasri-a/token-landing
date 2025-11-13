@@ -1,32 +1,33 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 /* 
   ═══════════════════════════════════════════════
   🏗️ ROOT LAYOUT - Next.js 15 App Router
-  Premium Dark Theme | WEALTH TOKEN Landing
-  Electric Green Accents | Dual Language Support
+  Redis-Inspired Dark Theme | WEALTH TOKEN Landing
+  Professional Developer-Centric Design | Redis Red Accents
   ═══════════════════════════════════════════════
 */
-
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-space-grotesk',
-});
 
 const inter = Inter({ 
   subsets: ["latin"],
   display: 'swap',
   variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
-  title: "WEALTH TOKEN ($WEALTH) - Premium Crypto Investment",
-  description: "Experience the future of wealth generation with WEALTH TOKEN ($WEALTH). A premium cryptocurrency investment opportunity with cutting-edge technology and exceptional growth potential.",
-  keywords: "wealth token, $WEALTH, crypto investment, premium token, blockchain technology, cryptocurrency, digital assets, wealth generation",
+  title: "WEALTH TOKEN ($WEALTH) - Professional Crypto Investment Platform",
+  description: "Experience the future of wealth generation with WEALTH TOKEN ($WEALTH). A professional cryptocurrency platform with Redis-inspired design, bank-grade security, and transparent operations.",
+  keywords: "wealth token, $WEALTH, crypto investment, professional token, blockchain technology, cryptocurrency, digital assets, developer-centric, secure investment",
+  authors: [{ name: "WEALTH TOKEN Development Team" }],
+  openGraph: {
+    title: "WEALTH TOKEN - Professional Crypto Platform",
+    description: "Professional-grade cryptocurrency token with Redis-inspired design and enterprise security.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-background-primary text-text-primary antialiased`}>
+      <body className={`${inter.variable} font-sans bg-dark-primary text-text-primary antialiased`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

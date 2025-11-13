@@ -2,156 +2,637 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import fonts for Redis-style typography hierarchy */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 /* 
   ═══════════════════════════════════════════════
-  🎨 WEALTH TOKEN - DARK MODE + ELECTRIC GREEN
-  Theme: Dark Premium with Growth-Focused Green Accents
+  🎨 WEALTH TOKEN - REDIS.IO INSPIRED DARK THEME
+  Theme: Professional Dark Mode with Redis Red Accents
+  Inspired by Redis.io's developer-centric design excellence
   ═══════════════════════════════════════════════
 */
 
 @layer base {
   :root {
-    /* Dark Mode Colors */
-    --bg-primary: #000000;        /* Pure Black */
-    --bg-secondary: #1A1A1A;      /* Very Dark Gray */
+    /* 🔴 Redis-Inspired Color System */
+    --color-accent-redis: #FF443A;           /* Distinctive Redis Red/Orange */
+    --color-accent-redis-hover: #E63946;     /* Darker Redis Red for hover states */
+    --color-accent-redis-light: #FF6B61;     /* Lighter Redis Red for highlights */
     
-    /* Text Colors */
-    --text-primary: #FFFFFF;      /* White */
-    --text-secondary: #E5E5E5;    /* Light Gray */
-    --text-muted: #A1A1A1;       /* Medium Gray */
+    /* 🌑 Dark Mode Background System */
+    --color-background-primary: #121212;     /* Deep background for body */
+    --color-background-secondary: #1E1E1E;   /* Slightly lighter dark for sections */
+    --color-surface-card: #2A2A2A;           /* Card and container backgrounds */
+    --color-surface-elevated: #333333;       /* Elevated surface elements */
+    --color-surface-code: #222222;           /* Technical data backgrounds */
     
-    /* Green Accent System */
-    --green-electric: #beef67;    /* Electric Green */
-    --green-bright: #beef67;      /* Bright Green */
-    --green-dark: #00B300;        /* Dark Green */
-    --green-glow: rgba(0, 255, 0, 0.5); /* Green Glow */
+    /* 📝 High-Contrast Text System */
+    --color-text-primary: #FFFFFF;           /* High-contrast white for main text */
+    --color-text-secondary: #CCCCCC;         /* Light gray for headings */
+    --color-text-muted: #999999;            /* Muted gray for descriptions */
+    --color-text-tertiary: #666666;         /* Very muted for labels */
     
-    /* Error Colors (Muted Red) */
-    --red-error: #CC4444;         /* Muted Red */
-    --red-dark: #B33333;          /* Dark Red */
+    /* 🔳 Border and Separator System */
+    --color-border-subtle: #3A3A3A;          /* Subtle separators and borders */
+    --color-border-medium: #4A4A4A;          /* More visible borders */
+    --color-border-accent: #FF443A;          /* Redis accent borders */
+    
+    /* 🔤 Typography System */
+    --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+    --font-family-mono: 'JetBrains Mono', 'Roboto Mono', 'Consolas', 'Monaco', monospace;
+    
+    /* 📏 Spacing System - Redis-style generous whitespace */
+    --whitespace-xs: 0.5rem;      /* 8px */
+    --whitespace-sm: 1rem;        /* 16px */
+    --whitespace-md: 1.5rem;      /* 24px */
+    --whitespace-lg: 2.5rem;      /* 40px */
+    --whitespace-xl: 4rem;        /* 64px */
+    --whitespace-2xl: 6rem;       /* 96px */
+    
+    /* 🎨 Shadow System for Dark Mode */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-large: 0 8px 24px rgba(0, 0, 0, 0.6);
+    --shadow-redis-glow: 0 0 20px rgba(255, 68, 58, 0.3);
+    
+    /* 📐 Border Radius System */
+    --radius-sm: 4px;             /* Buttons */
+    --radius-md: 6px;             /* Cards */
+    --radius-lg: 8px;             /* Large containers */
+    --radius-xl: 12px;            /* Special elements */
   }
 
+  /* 🌐 Global Reset and Base Styling */
   * {
-    @apply border-background-secondary;
+    border-color: var(--color-border-subtle);
   }
 
   body {
-    @apply bg-background-primary text-text-primary antialiased;
-    font-family: var(--font-inter, 'Inter', sans-serif);
+    background-color: var(--color-background-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
     scroll-behavior: smooth;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
+  /* 🔤 Typography Hierarchy - Redis.io Style */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-space-grotesk, 'Space Grotesk', sans-serif);
-    @apply text-text-primary;
+    font-family: var(--font-family-sans);
+    color: var(--color-text-primary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--whitespace-md);
+    letter-spacing: -0.025em;
+  }
+
+  h1 { 
+    font-size: 4rem;           /* 64px - Massive Redis-style heading */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--whitespace-lg);
+  }
+  
+  h2 { 
+    font-size: 2.5rem;         /* 40px - Section headings */
+    font-weight: 700;
+    margin-bottom: var(--whitespace-md);
+  }
+  
+  h3 { 
+    font-size: 1.75rem;        /* 28px - Card headers */
+    font-weight: 600;
+    margin-bottom: var(--whitespace-sm);
+  }
+
+  h4 {
+    font-size: 1.25rem;        /* 20px - Sub-section headers */
+    font-weight: 600;
+    margin-bottom: var(--whitespace-sm);
+  }
+
+  /* 📝 Body Text Styles */
+  p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--whitespace-sm);
+  }
+
+  /* 🔧 Technical Content - Monospace for Developer Data */
+  .technical-data, 
+  .crypto-address, 
+  .contract-id, 
+  .metric-value,
+  .code-block,
+  code,
+  pre {
+    font-family: var(--font-family-mono);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    background-color: var(--color-surface-code);
+    color: var(--color-text-primary);
+    border-radius: var(--radius-sm);
+  }
+
+  code {
+    padding: 0.125rem 0.375rem;
+    font-size: 0.875em;
+  }
+
+  pre {
+    padding: var(--whitespace-md);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    border: 1px solid var(--color-border-subtle);
+  }
+
+  /* 🎯 Enhanced focus styles for accessibility */
+  *:focus {
+    outline: 2px solid var(--color-accent-redis);
+    outline-offset: 2px;
+  }
+
+  /* 📱 Responsive Typography */
+  @media (max-width: 768px) {
+    h1 { font-size: 3rem; }      /* 48px on mobile */
+    h2 { font-size: 2rem; }      /* 32px on mobile */
+    h3 { font-size: 1.5rem; }    /* 24px on mobile */
   }
 }
 
 @layer utilities {
-  /* 🌟 Dark Glassmorphism utility */
-  .glass {
-    @apply bg-background-secondary/80 backdrop-blur-xl border border-background-secondary/30;
+  /* 🎨 Redis-Style Card Components */
+  .redis-card {
+    background-color: var(--color-surface-card);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--whitespace-lg);
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.2s ease;
   }
 
-  /* ✨ Green glow border utility */
-  .glow-border {
-    @apply border border-transparent bg-gradient-to-r from-green-electric to-green-bright bg-clip-border;
+  .redis-card:hover {
+    background-color: var(--color-surface-elevated);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
   }
 
-  /* 🔮 Green text gradient utility */
-  .text-gradient {
-    @apply bg-gradient-to-r from-green-electric to-green-bright bg-clip-text text-transparent;
+  .redis-card-elevated {
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-border-medium);
+    border-radius: var(--radius-lg);
+    padding: var(--whitespace-xl);
+    box-shadow: var(--shadow-medium);
   }
 
-  /* 💚 Money/Stats text utility */
-  .text-money {
-    @apply text-green-electric font-bold;
+  /* 🔴 Redis Accent Utilities */
+  .text-redis {
+    color: var(--color-accent-redis);
   }
 
-  /* 🎯 Primary CTA Button */
+  .bg-redis {
+    background-color: var(--color-accent-redis);
+  }
+
+  .border-redis {
+    border-color: var(--color-accent-redis);
+  }
+
+  .redis-glow {
+    box-shadow: var(--shadow-redis-glow);
+  }
+
+  /* 🎯 Professional Button System - Redis Style */
+  .btn-redis-primary {
+    background-color: var(--color-accent-redis);
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: var(--whitespace-md) var(--whitespace-lg);
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--whitespace-xs);
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .btn-redis-primary:hover {
+    background-color: var(--color-accent-redis-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-redis-glow);
+  }
+
+  .btn-redis-secondary {
+    background-color: transparent;
+    color: var(--color-accent-redis);
+    font-weight: 600;
+    padding: var(--whitespace-md) var(--whitespace-lg);
+    border: 2px solid var(--color-accent-redis);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--whitespace-xs);
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .btn-redis-secondary:hover {
+    background-color: var(--color-accent-redis);
+    color: #FFFFFF;
+  }
+
+  /* 📊 Technical Data Display - Redis Developer Style */
+  .redis-metric-card {
+    background-color: var(--color-surface-card);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--whitespace-lg);
+    text-align: center;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .redis-metric-card:hover {
+    border-color: var(--color-border-redis);
+    box-shadow: var(--shadow-redis-glow);
+  }
+
+  .redis-metric-value {
+    font-family: var(--font-family-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent-redis);
+    line-height: 1.1;
+    margin-bottom: var(--whitespace-sm);
+    letter-spacing: -0.02em;
+  }
+
+  .redis-metric-label {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .redis-metric-sublabel {
+    font-family: var(--font-family-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    margin-top: var(--whitespace-xs);
+  }
+
+  /* 🔧 Technical Code Blocks with Copy Functionality */
+  .redis-address-display {
+    background-color: var(--color-surface-code);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-sm);
+    padding: var(--whitespace-sm) var(--whitespace-md);
+    font-family: var(--font-family-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--whitespace-xs);
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* 📏 Layout and Spacing - Redis Whitespace System */
+  .redis-section-padding {
+    padding-top: var(--whitespace-2xl);
+    padding-bottom: var(--whitespace-2xl);
+  }
+
+  .redis-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--whitespace-lg);
+    padding-right: var(--whitespace-lg);
+  }
+
+  .redis-grid {
+    display: grid;
+    gap: var(--whitespace-lg);
+  }
+
+  .redis-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  /* 🎨 Status Indicators */
+  .status-active {
+    background-color: rgba(255, 68, 58, 0.1);
+    color: var(--color-accent-redis);
+    border: 1px solid rgba(255, 68, 58, 0.3);
+    padding: var(--whitespace-xs) var(--whitespace-sm);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* 💫 Redis-Style Animations */
+  .redis-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: redisFadeUp 0.6s ease forwards;
+  }
+
+  @keyframes redisFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .redis-hover-lift {
+    transition: transform 0.2s ease;
+  }
+
+  .redis-hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* 📱 Responsive Design */
+  @media (max-width: 768px) {
+    .redis-container {
+      padding-left: var(--whitespace-md);
+      padding-right: var(--whitespace-md);
+    }
+    
+    .redis-section-padding {
+      padding-top: var(--whitespace-xl);
+      padding-bottom: var(--whitespace-xl);
+    }
+
+    .redis-metric-value {
+      font-size: 2rem;
+    }
+
+    .btn-redis-primary,
+    .btn-redis-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@layer utilities {
+  /* � Clean Card Components - Redis Style */
+  .card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--gray-200);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .card-subtle {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--gray-100);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  /* � Green Accent Utilities */
+  .text-green-primary {
+    color: var(--green-primary);
+  }
+
+  .bg-green-primary {
+    background-color: var(--green-primary);
+  }
+
+  .border-green-primary {
+    border-color: var(--green-primary);
+  }
+
+  .text-green-dark {
+    color: var(--green-dark);
+  }
+
+  .bg-green-light {
+    background-color: var(--green-light);
+  }
+
+  /* 🎯 Professional Button System */
   .btn-primary {
-    @apply bg-green-electric hover:bg-green-bright text-background-primary font-bold;
-    @apply shadow-lg transition-all duration-300;
-    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.3);
+    background-color: var(--green-primary);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
   }
 
   .btn-primary:hover {
-    box-shadow: 0 6px 30px rgba(0, 255, 0, 0.5);
+    background-color: var(--green-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
   }
 
-  /* 🔗 Secondary CTA Button */
   .btn-secondary {
-    @apply border-2 border-green-electric text-green-electric hover:bg-green-electric hover:text-background-primary;
-    @apply transition-all duration-300;
+    background-color: transparent;
+    color: var(--green-primary);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--green-primary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
   }
 
-  /* 💫 Green glow effects */
-  .glow-green {
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  .btn-secondary:hover {
+    background-color: var(--green-primary);
+    color: white;
   }
 
-  .glow-green-strong {
-    box-shadow: 0 0 40px rgba(0, 255, 0, 0.6);
+  .btn-ghost {
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
   }
 
-  /* 🎊 Status indicator colors */
+  .btn-ghost:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+
+  /* 📊 Technical Data Display */
+  .metric-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--gray-200);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+
+  .metric-card:hover {
+    border-color: var(--green-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .metric-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--green-primary);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* 📝 Content Sections */
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .container-width {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* 🎨 Status Indicators */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
   .status-completed {
-    @apply text-green-electric;
+    background-color: var(--green-light);
+    color: var(--green-dark);
   }
 
   .status-in-progress {
-    @apply text-green-bright;
+    background-color: #FEF3C7;
+    color: #92400E;
   }
 
   .status-upcoming {
-    @apply text-text-muted;
+    background-color: var(--gray-100);
+    color: var(--gray-600);
   }
 
-  /* ⚠️ Error styles */
-  .text-error {
-    @apply text-red-muted;
+  /* 💫 Professional Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s ease forwards;
   }
 
-  .border-error {
-    @apply border-red-muted;
-  }
-
-  /* 💫 Enhanced shimmer effect for dark mode */
-  .shimmer {
-    @apply relative overflow-hidden;
-  }
-
-  .shimmer::before {
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-green-electric/20 to-transparent;
-    content: '';
-    animation: shimmer 2s linear infinite;
-  }
-
-  /* 🌟 Pulse glow animation with green */
-  @keyframes pulse-green-glow {
-    0%, 100% { 
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
-    }
-    50% { 
-      box-shadow: 0 0 40px rgba(0, 255, 0, 0.8);
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  .animate-pulse-glow {
-    animation: pulse-green-glow 3s ease-in-out infinite;
+  .hover-lift {
+    transition: transform 0.2s ease;
   }
 
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* 🔍 Focus and Accessibility */
+  .focus-ring:focus {
+    outline: 2px solid var(--green-primary);
+    outline-offset: 2px;
+  }
+
+  /* 📱 Responsive Typography */
+  .heading-xl {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .heading-lg {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .heading-md {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .text-lg-readable {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  /* 🌟 Subtle Highlights */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--green-light), var(--bg-secondary));
+    border: 1px solid var(--green-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .heading-xl { font-size: 2.5rem; }
+    .heading-lg { font-size: 2rem; }
+    .heading-md { font-size: 1.5rem; }
+    .container-width { padding-left: 1rem; padding-right: 1rem; }
   }
 }
