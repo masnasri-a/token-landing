@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import fonts for Redis-style typography hierarchy */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 /* 
   ═══════════════════════════════════════════════
   🎨 WEALTH TOKEN - PREMIUM LIGHT MODE
@@ -33,6 +36,7 @@
     
   }
 
+  /* 🌐 Global Reset and Base Styling */
   * {
     @apply border-wealth-gray-200;
   }
@@ -43,12 +47,15 @@
     font-family: var(--font-dosis), sans-serif;
     scroll-behavior: smooth;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
+  /* 🔤 Typography Hierarchy - Redis.io Style */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-concert-one), cursive;
     @apply text-wealth-navy;

@@ -68,9 +68,9 @@ export default function AboutSection() {
                 >
                   {/* 🎯 Icon with glow */}
                   <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-green-electric/30 blur-xl rounded-full group-hover:bg-green-electric/50 transition-all" />
-                    <div className="relative w-16 h-16 bg-gradient-to-br from-green-electric to-green-dark rounded-2xl flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-background-primary" strokeWidth={2.5} />
+                    <div className="absolute inset-0 bg-green-electric/30 blur-xl rounded-full transition-all" />
+                    <div className="relative w-16 h-16 bg-gradient-to-br text-redis rounded-2xl flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-redis" strokeWidth={2.5} />
                     </div>
                   </div>
 

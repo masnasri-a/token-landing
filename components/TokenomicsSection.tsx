@@ -156,7 +156,7 @@ export default function TokenomicsSection() {
           <div className="space-y-6">
             {distributionConfig.map((item, index) => {
               const colors = {
-                0: 'bg-green-electric', // Public Sale - Bright Green
+                0: 'bg-redis', // Public Sale - Bright Green
                 1: 'bg-gray-600',       // Team - Gray
                 2: 'bg-green-dark',     // Liquidity - Dark Green
                 3: 'bg-gray-500'        // Development - Light Gray
@@ -172,7 +172,7 @@ export default function TokenomicsSection() {
                   className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-green-electric/5 transition-all group"
                 >
                   {/* Color indicator */}
-                  <div className={`w-4 h-4 rounded-full ${colors[index as keyof typeof colors]} glow-green`} />
+                  <div className={`w-4 h-4 rounded-full ${colors[index as keyof typeof colors]}`} />
                   
                   {/* Content */}
                   <div className="flex-1">

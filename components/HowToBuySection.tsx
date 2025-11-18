@@ -84,9 +84,9 @@ export default function HowToBuySection() {
 
                   {/* 🎯 Icon */}
                   <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-green-electric/30 blur-2xl rounded-full" />
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-green-electric to-green-dark rounded-2xl flex items-center justify-center glow-green">
-                      <Icon className="w-10 h-10 text-background-primary" strokeWidth={2} />
+                    <div className="absolute inset-0 bg-red-500/30 blur-2xl rounded-full" />
+                    <div className="relative w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center glow-red">
+                      <Icon className="w-10 h-10 text- " strokeWidth={2} />
                     </div>
                   </div>
 
@@ -98,11 +98,8 @@ export default function HowToBuySection() {
                     {step.description}
                   </p>                  {/* 🔘 Action button */}
                   <motion.button
-                    className={`w-full py-4 rounded-xl font-heading font-semibold text-lg transition-all mt-6 ${
-                      index === 2
-                        ? 'btn-primary'
-                        : 'bg-background-secondary text-text-secondary hover:bg-green-electric/10 border border-green-electric/30'
-                    }`}
+                    className={`w-full py-4 rounded-xl font-heading font-semibold text-lg transition-all mt-6 bg-background-secondary text-text-secondary hover:bg-red-500/10 border border-red-500/30'
+                    `}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     {...(index === 2 ? glowPulse : {})}
