@@ -82,7 +82,7 @@ export default function WealthHeroSection() {
               variants={fadeInUp}
               className="lifestyle-text max-w-xl"
             >
-              Join a community that celebrates life's best moments. From padel courts to music festivals, 
+              Join a community that celebrates life&apos;s best moments. From padel courts to music festivals, 
               from premium dining to unforgettable experiences — your lifestyle token is here.
             </motion.p>
 

@@ -115,7 +115,7 @@ export default function WealthPartnersSection() {
           </h2>
           
           <p className="lifestyle-text max-w-3xl mx-auto">
-            We partner with the world's finest venues, establishments, and experience providers 
+            We partner with the world&apos;s finest venues, establishments, and experience providers 
             to bring you nothing but the best in lifestyle and entertainment.
           </p>
         </motion.div>

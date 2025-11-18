@@ -189,7 +189,7 @@ export default function LifestyleSportsSection() {
                 More Than Just Access
               </h3>
               <p className="lifestyle-text mb-6">
-                WEALTH Token doesn't just give you access—it gives you <em>community</em>. 
+                WEALTH Token doesn&apos;t just give you access—it gives you <em>community</em>. 
                 Every experience connects you with others who share your passions.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

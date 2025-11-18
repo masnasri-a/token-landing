@@ -132,8 +132,8 @@ export default function WealthRoadmapSection() {
           </h2>
           
           <p className="lifestyle-text max-w-3xl mx-auto">
-            Our roadmap isn't just about features—it's about building a lifestyle ecosystem 
-            that grows with our community's dreams and aspirations.
+            Our roadmap isn&apos;t just about features—it&apos;s about building a lifestyle ecosystem 
+            that grows with our community&apos;s dreams and aspirations.
           </p>
         </motion.div>
 

@@ -108,7 +108,7 @@ export default function WealthTokenomicsSection() {
           
           <p className="lifestyle-text max-w-3xl mx-auto">
             WEALTH Token economics are designed for sustainability and community growth. 
-            Every token has a purpose in building the lifestyle ecosystem we're creating together.
+            Every token has a purpose in building the lifestyle ecosystem we&apos;re creating together.
           </p>
         </motion.div>
 
@@ -239,7 +239,7 @@ export default function WealthTokenomicsSection() {
               Built for the Long Term
             </h3>
             <p className="lifestyle-text mb-6 max-w-3xl mx-auto">
-              WEALTH Token isn't designed for quick flips or speculation. It's built to grow 
+              WEALTH Token isn&apos;t designed for quick flips or speculation. It&apos;s built to grow 
               in value as our community and ecosystem expand, creating sustainable value for 
               everyone involved.
             </p>

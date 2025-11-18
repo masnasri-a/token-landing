@@ -261,11 +261,11 @@ export default function WealthCommunitySection() {
               >
                 <div className="p-6">
                   <div className="mb-4">
-                    <span className="text-wealth-coral text-2xl">"</span>
+                    <span className="text-wealth-coral text-2xl">&ldquo;</span>
                     <p className="text-wealth-gray-700 leading-relaxed italic">
                       {testimonial.quote}
                     </p>
-                    <span className="text-wealth-coral text-2xl">"</span>
+                    <span className="text-wealth-coral text-2xl">&rdquo;</span>
                   </div>
                   
                   <div className="border-t border-wealth-gray-200 pt-4">
@@ -298,7 +298,7 @@ export default function WealthCommunitySection() {
               Your Community Awaits
             </h3>
             <p className="lifestyle-text mb-6 max-w-2xl mx-auto">
-              Don't just hold WEALTH—live it! Join thousands of members who are already 
+              Don&apos;t just hold WEALTH—live it! Join thousands of members who are already 
               discovering extraordinary experiences and building lasting friendships.
             </p>
             
