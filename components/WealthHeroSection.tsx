@@ -3,7 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, ArrowRight, Zap } from 'lucide-react';
-
+import Image from 'next/image';
+import Logo from '@/public/logo.png';
 /*
   ═══════════════════════════════════════════════
   🎪 WEALTH TOKEN HERO SECTION
@@ -157,9 +158,9 @@ export default function WealthHeroSection() {
 
                   {/* Center - WEALTH Symbol */}
                   <div className="flex justify-center">
-                    <div className="w-20 h-20 rounded-full bg-wealth-mint border-4 border-wealth-navy relative">
+                    <div className="w-32 h-32 rounded-full bg-wealth-mint border-4 border-wealth-navy relative">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="font-heading text-2xl text-wealth-navy transform -rotate-3">W</span>
+                        <span className="font-heading text-2xl text-wealth-navy transform -rotate-3"><Image src={Logo} alt="WEALTH Logo" className='w-24 h-24 ' /></span>
                       </div>
                       {/* Sparkles */}
                       <div className="absolute -top-2 -right-2 w-4 h-4 bg-wealth-coral rounded-full animate-bounce-gentle"></div>
