@@ -117,7 +117,7 @@ export default function HeroSection() {
         >
           {/* Primary CTA - Buy Token */}
           <motion.button
-            className="btn-primary group relative px-8 py-4 rounded-xl font-heading font-semibold text-lg overflow-hidden"
+            className="btn-primary !bg-[var(--green-wealth)] !text-white group relative px-8 py-4 rounded-xl font-heading font-semibold text-lg overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

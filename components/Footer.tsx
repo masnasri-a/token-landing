@@ -146,7 +146,7 @@ export default function Footer() {
               />
               <motion.button
                 type="submit"
-                className="btn-primary px-8 py-3 font-heading font-semibold rounded-xl"
+                className="btn-primary !bg-[var(--green-wealth)] !text-white px-8 py-3 font-heading font-semibold rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

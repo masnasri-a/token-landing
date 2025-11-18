@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
+import { FaFirefoxBrowser, FaLink, FaCoins } from "react-icons/fa";
 import { modalBackdrop, modalContent } from "@/lib/animations";
 
 /* 
@@ -18,9 +19,9 @@ interface WalletModalProps {
 }
 
 const wallets = [
-  { name: "MetaMask", icon: "🦊", description: "Connect to your MetaMask Wallet" },
-  { name: "WalletConnect", icon: "🔗", description: "Scan with WalletConnect to connect" },
-  { name: "Coinbase Wallet", icon: "🔵", description: "Connect to your Coinbase Wallet" },
+  { name: "MetaMask", icon: FaFirefoxBrowser, description: "Connect to your MetaMask Wallet" },
+  { name: "WalletConnect", icon: FaLink, description: "Scan with WalletConnect to connect" },
+  { name: "Coinbase Wallet", icon: FaCoins, description: "Connect to your Coinbase Wallet" },
 ];
 
 export default function WalletModal({ isOpen, onClose }: WalletModalProps) {
@@ -62,27 +63,30 @@ export default function WalletModal({ isOpen, onClose }: WalletModalProps) {
 
         {/* 💼 Wallet options */}
         <div className="space-y-4">
-          {wallets.map((wallet, index) => (
-            <motion.button
-              key={index}
-              className="w-full glass p-4 rounded-xl hover:bg-white/15 transition-all text-left flex items-center gap-4 group border border-steel-600/20"
-              whileHover={{ scale: 1.02, x: 4 }}
-              whileTap={{ scale: 0.98 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <div className="text-4xl">{wallet.icon}</div>
-              <div className="flex-1">
-                <div className="font-semibold text-steel-100 mb-1 group-hover:text-accent-blue transition-colors">
-                  {wallet.name}
+          {wallets.map((wallet, index) => {
+            const IconComponent = wallet.icon;
+            return (
+              <motion.button
+                key={index}
+                className="w-full glass p-4 rounded-xl hover:bg-white/15 transition-all text-left flex items-center gap-4 group border border-steel-600/20"
+                whileHover={{ scale: 1.02, x: 4 }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <IconComponent className="w-8 h-8 text-steel-400 group-hover:text-accent-blue transition-colors" />
+                <div className="flex-1">
+                  <div className="font-semibold text-steel-100 mb-1 group-hover:text-accent-blue transition-colors">
+                    {wallet.name}
+                  </div>
+                  <div className="text-sm text-steel-400">
+                    {wallet.description}
+                  </div>
                 </div>
-                <div className="text-sm text-steel-400">
-                  {wallet.description}
-                </div>
-              </div>
-            </motion.button>
-          ))}
+              </motion.button>
+            );
+          })}
         </div>
 
         {/* ℹ️ Info text */}

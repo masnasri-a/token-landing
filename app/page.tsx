@@ -1,37 +1,51 @@
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import TokenomicsSection from "@/components/TokenomicsSection";
-import HowToBuySection from "@/components/HowToBuySection";
-import RoadmapSection from "@/components/RoadmapSection";
-import Footer from "@/components/Footer";
+import WealthHeroSection from "@/components/WealthHeroSection";
+import WhatIsWealthSection from "@/components/WhatIsWealthSection";
+import LifestyleSportsSection from "@/components/LifestyleSportsSection";
+import WealthRoadmapSection from "@/components/WealthRoadmapSection";
+import WealthTokenomicsSection from "@/components/WealthTokenomicsSection";
+import WealthPartnersSection from "@/components/WealthPartnersSection";
+import WealthCommunitySection from "@/components/WealthCommunitySection";
+import WealthFAQSection from "@/components/WealthFAQSection";
+import WealthFooter from "@/components/WealthFooter";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 /* 
   ═══════════════════════════════════════════════
-  🏠 MAIN LANDING PAGE
+  🎪 WEALTH TOKEN LANDING PAGE
   
-  Web3 Token Sale Landing Page
-  Theme: Light Steel Industrial Minimal Futuristic
-  Dual Language: English (primary) & Indonesian
+  Premium Lifestyle Token Landing Page
+  Theme: Clean Light Mode + Festival Vibes
+  Style: Minimalist with doodle illustrations
+  Colors: Mint Pastel + Coral + Navy Ink
   
   Tech Stack:
   - Next.js 15 (App Router)
-  - Tailwind CSS (Custom Steel palette)
-  - Framer Motion (Full animation suite)
-  - Lucide React (Icons)
+  - Tailwind CSS (WEALTH brand colors)
+  - Framer Motion (Subtle animations)
+  - Lucide React (Icons + doodles)
   
   Sections:
-  1. Hero - Parallax background, floating token orb
-  2. About - Glassmorphism cards, staggered animations
-  3. Tokenomics - Animated progress bars
-  4. How to Buy - 3-step interactive process
-  5. Roadmap - Horizontal timeline with glowing dots
-  6. Footer - Social links, rotating ETH icon
+  1. Hero - Split layout with doodle festival illustration
+  2. What is WEALTH - Lifestyle token explanation
+  3. Lifestyle & Sports - Padel, Football, Music, F&B
+  4. Roadmap - Clean timeline with mint/coral indicators
+  5. Tokenomics - Beginner-friendly, no meme charts
+  6. Partners - Premium venue showcase
+  7. Community - Discord/Telegram CTAs
+  8. FAQ - Accordion, beginner-friendly
+  9. Footer - Clean navy ink styling
   
-  Color Palette:
-  #F8FAFC → #E4E7EB → #CBD5E1 → #9CA3AF → 
-  #6B7280 → #4B5563 → #374151 → #1F2937 → #111827
-  Accent: #3B82F6
+  Brand Colors:
+  - Mint Pastel: #A7F3D0 (Primary)
+  - Coral Pastel: #FB7185 (Secondary)  
+  - Navy Ink: #111827 (Text)
+  - White: #FFFFFF (Background)
+  - Mint Wash: rgba(167, 243, 208, 0.1) (Subtle bg)
+  
+  Fonts:
+  - Heading: Concert One
+  - Body: Dosis
+  - Accent: Delius
   
   ═══════════════════════════════════════════════
 */
@@ -42,23 +56,32 @@ export default function Home() {
       {/* 🌐 Language Switcher - Fixed top right */}
       <LanguageSwitcher />
       
-      {/* 🚀 Hero Section - Full screen intro with CTA */}
-      <HeroSection />
+      {/* 🎪 Hero Section - Festival vibes with doodle illustration */}
+      <WealthHeroSection />
       
-      {/* 💎 About Token - Feature highlights */}
-      <AboutSection />
+      {/* 🎯 What is WEALTH - Lifestyle token explanation */}
+      <WhatIsWealthSection />
       
-      {/* 📊 Tokenomics - Distribution breakdown */}
-      <TokenomicsSection />
+      {/* 🏓 Lifestyle & Sports - Core experience categories */}
+      {/* <LifestyleSportsSection /> */}
       
-      {/* 🛒 How to Buy - Purchase guide */}
-      <HowToBuySection />
+      {/* 🗺️ Roadmap - Development timeline */}
+      <WealthRoadmapSection />
       
-      {/* 🗺️ Roadmap - Project timeline */}
-      <RoadmapSection />
+      {/* 📊 Tokenomics - Economics breakdown */}
+      <WealthTokenomicsSection />
       
-      {/* 🦶 Footer - Links & social */}
-      <Footer />
+      {/* 🤝 Partners - Premium venue showcase */}
+      {/* <WealthPartnersSection /> */}
+      
+      {/* 👥 Community - Discord/Telegram CTAs */}
+      <WealthCommunitySection />
+      
+      {/* ❓ FAQ - Beginner-friendly questions */}
+      <WealthFAQSection />
+      
+      {/* 🦶 Footer - Clean minimal design */}
+      <WealthFooter />
     </main>
   );
 }
