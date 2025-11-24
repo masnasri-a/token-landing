@@ -69,7 +69,7 @@
 @layer utilities {
   /* 🌟 Premium card styling */
   .wealth-card {
-    @apply bg-white rounded-wealth-lg shadow-wealth border border-wealth-gray-100;
+    @apply  rounded-wealth-lg shadow-wealth border border-wealth-gray-100;
   }
 
   .wealth-card-hover {

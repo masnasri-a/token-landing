@@ -83,8 +83,7 @@ export default function WealthHeroSection() {
               variants={fadeInUp}
               className="lifestyle-text max-w-xl"
             >
-              Join a community that celebrates life&apos;s best moments. From padel courts to music festivals, 
-              from premium dining to unforgettable experiences — your lifestyle token is here.
+             From sports to entertainment
             </motion.p>
 
             {/* CTA Buttons */}
@@ -134,7 +133,7 @@ export default function WealthHeroSection() {
           >
             <div className="relative">
               {/* Main Illustration Container */}
-              <div className="relative bg-white rounded-wealth-lg shadow-wealth-lg p-8 border-4 border-wealth-navy transform rotate-1 hover:rotate-0 transition-transform duration-500">
+              <div className="relative  rounded-wealth-lg shadow-wealth-lg p-8 border-4 border-wealth-navy transform rotate-1 hover:rotate-0 transition-transform duration-500">
                 
                 {/* Festival Scene Doodle */}
                 <div className="space-y-6">
@@ -200,7 +199,7 @@ export default function WealthHeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="absolute -bottom-4 right-8 bg-white shadow-wealth rounded-wealth px-4 py-2 border-2 border-wealth-navy"
+              className="absolute -bottom-4 right-8  shadow-wealth rounded-wealth px-4 py-2 border-2 border-wealth-navy bg-white"
             >
               <div className="flex items-center gap-2 text-sm font-accent text-wealth-navy">
                 <Zap className="w-4 h-4 text-wealth-coral" />

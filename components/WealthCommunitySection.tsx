@@ -293,7 +293,7 @@ export default function WealthCommunitySection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <div className="bg-white rounded-wealth-lg shadow-wealth-lg p-8 border-4 border-wealth-navy transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+          <div className=" rounded-wealth-lg shadow-wealth-lg p-8 border-4 border-wealth-navy transform -rotate-1 hover:rotate-0 transition-transform duration-500">
             <h3 className="font-heading text-3xl text-wealth-navy mb-4">
               Your Community Awaits
             </h3>

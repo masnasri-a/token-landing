@@ -102,7 +102,7 @@ export default function LifestyleSportsSection() {
                     <div className="flex items-center justify-between mb-4">
                       {/* Doodle Icon */}
                       <div className="relative">
-                        <div className="w-16 h-16 bg-white rounded-wealth border-3 border-wealth-navy flex items-center justify-center text-2xl transform group-hover:rotate-6 transition-transform duration-300">
+                        <div className="w-16 h-16  rounded-wealth border-3 border-wealth-navy flex items-center justify-center text-2xl transform group-hover:rotate-6 transition-transform duration-300">
                           <IconComponent className="w-8 h-8 text-wealth-navy" />
                         </div>
                         {/* Sparkle */}
@@ -175,7 +175,7 @@ export default function LifestyleSportsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <div className="bg-white rounded-wealth-lg shadow-wealth-lg p-8 border-4 border-wealth-navy transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+          <div className=" rounded-wealth-lg shadow-wealth-lg p-8 border-4 border-wealth-navy transform -rotate-1 hover:rotate-0 transition-transform duration-500">
             <div className="max-w-2xl mx-auto">
               <h3 className="font-heading text-3xl text-wealth-navy mb-4">
                 More Than Just Access

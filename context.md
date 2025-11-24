@@ -39,7 +39,7 @@ Accent biru lembut: #3B82F6
      - Floating 3D token orb (rotating glow)
 
 2. **About Token**
-   - Glassmorphism card (`bg-white/10 backdrop-blur-xl border border-white/10`)
+   - Glassmorphism card (`/10 backdrop-blur-xl border border-white/10`)
    - Hover: slight scale-up (`whileHover={{ scale: 1.03 }}`)
    - Appear with staggered fade-in sequence
    - Framer Motion `transition={{ duration: 0.6, delayChildren: 0.2, staggerChildren: 0.1 }}`

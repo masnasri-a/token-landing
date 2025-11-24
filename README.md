@@ -98,7 +98,7 @@ token-fe/
 ### Glassmorphism
 ```tsx
 <div className="glass">
-  {/* bg-white/10 backdrop-blur-xl border border-white/10 */}
+  {/* /10 backdrop-blur-xl border border-white/10 */}
 </div>
 ```
 

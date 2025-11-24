@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${dosis.variable} ${concertOne.variable} ${delius.variable} font-body bg-wealth-bg text-wealth-navy antialiased`}>
+      <body className={`${dosis.variable} ${concertOne.variable} ${delius.variable} font-body bg-coral-wash text-wealth-navy antialiased`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

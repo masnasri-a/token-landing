@@ -48,7 +48,7 @@ export default function WalletModal({ isOpen, onClose }: WalletModalProps) {
         {/* ❌ Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:/10 transition-colors"
         >
           <X className="w-5 h-5 text-steel-400" />
         </button>
@@ -68,7 +68,7 @@ export default function WalletModal({ isOpen, onClose }: WalletModalProps) {
             return (
               <motion.button
                 key={index}
-                className="w-full glass p-4 rounded-xl hover:bg-white/15 transition-all text-left flex items-center gap-4 group border border-steel-600/20"
+                className="w-full glass p-4 rounded-xl hover:/15 transition-all text-left flex items-center gap-4 group border border-steel-600/20"
                 whileHover={{ scale: 1.02, x: 4 }}
                 whileTap={{ scale: 0.98 }}
                 initial={{ opacity: 0, y: 20 }}

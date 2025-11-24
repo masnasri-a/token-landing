@@ -175,7 +175,7 @@ export default function WealthFooter() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-2 rounded-wealth bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-wealth-mint"
               />
-              <button className="px-6 py-2 bg-wealth-mint text-wealth-navy font-semibold rounded-wealth hover:bg-white transition-colors">
+              <button className="px-6 py-2 bg-wealth-mint text-wealth-navy font-semibold rounded-wealth hover: transition-colors">
                 Subscribe
               </button>
             </div>

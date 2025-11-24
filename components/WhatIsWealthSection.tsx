@@ -55,7 +55,7 @@ export default function WhatIsWealthSection() {
   };
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding ">
       <div className="max-content container-padding">
         
         {/* Section Header */}
