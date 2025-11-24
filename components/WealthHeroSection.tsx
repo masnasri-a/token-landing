@@ -72,7 +72,7 @@ export default function WealthHeroSection() {
               Live the Good Life,{" "}
               <span className="text-[#137357]">Powered by</span>{" "}
               <span className="inline-flex items-center gap-2">
-                <span className="transform -rotate-1">
+                <span className="transform -rotate-1 text-[#d18f04]">
                   $WEALTH
                 </span>
               </span>
@@ -158,7 +158,7 @@ export default function WealthHeroSection() {
 
                   {/* Center - WEALTH Symbol */}
                   <div className="flex justify-center">
-                    <div className="w-32 h-32 rounded-full bg-wealth-mint border-4 border-wealth-navy relative">
+                    <div className="w-32 h-32 rounded-full bg-[#137258] border-4 border-wealth-navy relative">
                       <div className="absolute inset-0 flex items-center justify-center">
                         <span className="font-heading text-2xl text-wealth-navy transform -rotate-3"><Image src={Logo} alt="WEALTH Logo" className='w-24 h-24 ' /></span>
                       </div>

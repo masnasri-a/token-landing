@@ -180,7 +180,7 @@
   }
 
   .doodle-bg {
-    @apply bg-wealth-mint border-2 border-wealth-navy;
+    @apply bg-black border-2 border-wealth-navy;
     border-radius: 16px;
     position: relative;
   }

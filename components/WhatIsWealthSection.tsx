@@ -68,7 +68,7 @@ export default function WhatIsWealthSection() {
         >
           <h2 className="font-heading text-4xl md:text-5xl text-wealth-navy mb-6">
             What is{" "}
-            <span className="doodle-bg px-4 py-2 transform rotate-1 inline-block text-white">
+            <span className="doodle-bg px-4 py-2 transform rotate-1 inline-block text-[#d18f03]">
               WEALTH Token?
             </span>
           </h2>
