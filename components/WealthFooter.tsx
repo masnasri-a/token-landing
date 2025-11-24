@@ -115,11 +115,7 @@ export default function WealthFooter() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm text-gray-300">
                   <Mail className="w-4 h-4 text-wealth-mint" />
-                  hello@wealthtoken.com
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-300">
-                  <MapPin className="w-4 h-4 text-wealth-coral" />
-                  Global • 25+ Cities
+                  hi@wealthcrypto.fund
                 </div>
               </div>
             </div>
