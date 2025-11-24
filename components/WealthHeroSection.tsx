@@ -15,7 +15,7 @@ import Logo from '@/public/logo.png';
 
 export default function WealthHeroSection() {
   const categories = [
-    "Sports", "Music", "Padel", "F&B", "Community"
+    "Sports", "Music", "F&B", "Community"
   ];
 
   const fadeInUp = {
@@ -34,7 +34,7 @@ export default function WealthHeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-mint-wash overflow-hidden">
+    <section className="relative min-h-screen bg-coral-wash overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-20 h-20 rounded-full border-2 border-wealth-mint animate-bounce-gentle"></div>

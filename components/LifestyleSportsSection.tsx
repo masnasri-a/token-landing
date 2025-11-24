@@ -15,14 +15,6 @@ import { IoTennisball, IoFootball, IoMusicalNotes, IoWine } from 'react-icons/io
 export default function LifestyleSportsSection() {
   const lifestyleCategories = [
     {
-      title: "Padel",
-      description: "Join premium padel courts and tournaments. Connect with players who share your passion for this exciting sport.",
-      doodleIcon: IoTennisball,
-      bgColor: "mint",
-      stats: "50+ Courts",
-      features: ["Premium Courts", "Tournaments", "Social Events", "Coaching"]
-    },
-    {
       title: "Football", 
       description: "From local matches to exclusive stadium experiences. Feel the thrill of the beautiful game with fellow fans.",
       doodleIcon: IoFootball,

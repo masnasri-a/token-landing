@@ -18,7 +18,6 @@ export default function WealthPartnersSection() {
       icon: Award,
       description: "Exclusive access to top-tier sports facilities",
       partners: [
-        "Elite Padel Club",
         "Champions Football Academy", 
         "SportLux Centers",
         "Premium Fitness",

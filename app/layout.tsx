@@ -35,7 +35,7 @@ const delius = Delius({
 export const metadata: Metadata = {
   title: "WEALTH Token ($WEALTH) - Live the Good Life",
   description: "Unlock curated experiences across sports, music, dining, and community with WEALTH Token. Join the lifestyle revolution that's redefining everyday fun.",
-  keywords: "wealth token, $WEALTH, lifestyle token, sports, music, padel, food, community, experiences, premium lifestyle",
+  keywords: "wealth token, $WEALTH, lifestyle token, sports, music, food, community, experiences, premium lifestyle",
 };
 
 export default function RootLayout({

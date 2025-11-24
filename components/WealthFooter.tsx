@@ -17,7 +17,7 @@ export default function WealthFooter() {
     {
       title: "Experience",
       links: [
-        { name: "Sports & Padel", href: "#sports" },
+        { name: "Sports", href: "#sports" },
         { name: "Music & Events", href: "#music" },
         { name: "Food & Beverage", href: "#dining" },
         { name: "Community Meetups", href: "#community" }
